@@ -1,0 +1,809 @@
+{
+  "model_evaluated": "moonshotai/kimi-k2.5",
+  "scoring_model": "google/gemini-3-flash-preview",
+  "num_examples_evaluated": 99,
+  "overall_score": 85.91,
+  "individual_scores": [
+    95,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    85,
+    100,
+    85,
+    100,
+    100,
+    100,
+    90,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    0,
+    0,
+    95,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    90,
+    95,
+    90,
+    85,
+    100,
+    75,
+    100,
+    90,
+    100,
+    100,
+    85,
+    85,
+    100,
+    90,
+    100,
+    100,
+    100,
+    0,
+    90,
+    0,
+    90,
+    100,
+    100,
+    100,
+    0,
+    100,
+    0,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    70,
+    100,
+    0,
+    100,
+    40,
+    100,
+    95,
+    100,
+    95,
+    100,
+    100,
+    90,
+    0,
+    100,
+    95,
+    100,
+    0,
+    100,
+    100,
+    100,
+    100,
+    40,
+    0,
+    100,
+    90,
+    100,
+    100,
+    85,
+    100,
+    100,
+    100,
+    90,
+    100,
+    100,
+    100
+  ],
+  "score_distribution": {
+    "90-100": 79,
+    "80-89": 6,
+    "70-79": 2,
+    "60-69": 0,
+    "below-60": 12
+  },
+  "detailed_results": [
+    {
+      "question": "Which university did one of the key figures in the American documentary film, released in 2015, directed by Malcolm Ingram, pay for, before being drafted 18th overall pick for the New Jersey Nets?",
+      "generated_answer": "Based on the documents provided, the university is **Stanford University**.\n\nThe key figure described is Jason Collins. According to Document 3, he \"played college basketball for Stanford University\" before being \"drafted 18th overall pick in the 2001 NBA draft\" and later playing for the New Jersey Nets (among other teams).",
+      "reference_answer": "One of the key figures in the American documentary film, released in 2015, directed by Malcolm Ingram, played college basketball for Stanford University before being drafted 18th overall pick for the New Jersey Nets.",
+      "score": 85,
+      "scoring_reasoning": "The answer correctly identifies Stanford University and the key figure (Jason Collins) based on the documents. However, there is a factual discrepancy in the provided documents that the answer failed to note: Document 4 states Jason Collins was drafted 18th overall by the *Houston Rockets*, but the question (and the reference answer) implies he was drafted by the *New Jersey Nets*. While the answer correctly identifies the university associated with the player, it follows the incorrect premise of the question without clarifying the team discrepancy mentioned in the text."
+    },
+    {
+      "question": "Were both L\u00e9opold Eyharts and Ulrich Walter a General in the French Air Force? ",
+      "generated_answer": "Based on the provided documents, **no**, both L\u00e9opold Eyharts and Ulrich Walter were not Generals in the French Air Force.\n\nAccording to Document 1, L\u00e9opold Eyharts is a Brigadier General in the French Air Force. However, Document 2 states that Ulrich Walter is a German physicist/engineer and former DFVLR astronaut, with no mention of him holding any rank in the French Air Force.",
+      "reference_answer": "No, only L\u00e9opold Eyharts was a General in the French Air Force. Ulrich Walter was a German physicist/engineer and a former DFVLR astronaut, not a General in the French Air Force.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and directly addresses the question using only the provided documents. It correctly identifies L\u00e9opold Eyharts as a Brigadier General in the French Air Force and Ulrich Walter as a German physicist/engineer, noting that the documents do not attribute a French Air Force rank to him. It also correctly points out a minor error in the documents' numbering (citing Document 2 for Ulrich Walter when it was actually Document 3), but this does not impact the factual correctness of the answer."
+    },
+    {
+      "question": "Which music group has the most members, DC Talk, or Manchester Orchestra?",
+      "generated_answer": "Based on the provided documents, **Manchester Orchestra** has the most members.\n\n- **DC Talk** is described as a \"trio\" consisting of **3 members**: Toby McKeehan, Michael Tait, and Kevin Max Smith.\n- **Manchester Orchestra** currently has **4 members**: Andy Hull, Robert McDowell, Andy Prince, and Tim Very.",
+      "reference_answer": "DC Talk has three members, while Manchester Orchestra has four members, so Manchester Orchestra has the most members.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents provided. It accurately identifies DC Talk as a trio (3 members) and Manchester Orchestra as having 4 current members, concluding that Manchester Orchestra has more."
+    },
+    {
+      "question": "Eddie Jemison had a role in the television series \"IZombie\", which premiered on what date?",
+      "generated_answer": "Based on the provided documents, the television series \"iZombie\" premiered on **March 17, 2015**.",
+      "reference_answer": "March 17, 2015",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely correct, faithful to the documents, and directly answers the question. It provides the exact date mentioned in Documents 3 and 4."
+    },
+    {
+      "question": "Consider the band formed in 2015 by JYP Entertainment through the reality show \"Sixteen\". How many tracks are on the reissue of their third album?",
+      "generated_answer": "Based on the documents provided, the band formed in 2015 by JYP Entertainment through the reality show \"Sixteen\" is **Twice**.\n\nAccording to Document 3, the reissue of their third album (*Twicecoaster: Lane 2*) contains **13 tracks**.",
+      "reference_answer": "The band formed in 2015 by JYP Entertainment through the reality show \"Sixteen\" is Twice. The reissue of their third album, \"Twicecoaster: Lane 2\", contains 13 tracks.",
+      "score": 95,
+      "scoring_reasoning": "The answer is correct and faithful to the documents. It correctly identifies the group as Twice and the track count as 13. Note: The answer mentions Document 3 as the source for the track count, but the information actually resides in Document 2. This is a minor citation error that does not affect the factual accuracy of the response."
+    },
+    {
+      "question": "What three categories does income get levied under the Parliament of Australia's tax code?",
+      "generated_answer": "Based on the documents provided, income tax levied under the Australian taxation system (governed by acts of the Parliament of Australia such as the Income Tax Assessment Act 1936 and 1997) is applied to three categories of income for individual taxpayers:\n\n1. **Personal earnings** (such as salary and wages)\n2. **Business income**\n3. **Capital gains**",
+      "reference_answer": "Income tax in Australia is levied upon three sources of income for individual taxpayers: \"personal earnings\" (such as salary and wages), \"business income\" and \"capital gains\".",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct and faithful to the documents. It accurately identifies the three categories mentioned in Document 2 and correctly attributes them to the Australian tax system described in Document 1. The answer is clear and complete."
+    },
+    {
+      "question": "What city did the author of \"Portraits and Prayers\" choose to live in after moving to France?",
+      "generated_answer": "Based on the documents provided, the author of \"Portraits and Prayers\" is Gertrude Stein. According to Document 1, Stein moved to **Paris** in 1903 and made France her home for the remainder of her life. Document 2 further confirms this by mentioning her weekly salons at 27 rue de Fleurus in Paris.",
+      "reference_answer": "The author of \"Portraits and Prayers,\" Gertrude Stein, chose to live in Paris after moving to France.",
+      "score": 100,
+      "scoring_reasoning": "The answer is entirely correct, complete, and faithful to the provided documents. It correctly identifies Gertrude Stein as the author of 'Portraits and Prayers' (from Document 4) and confirms she moved to Paris in 1903 (from Document 1). The mention of Document 2 in the generated response appears to be a minor clerical error in citing the document number (it meant Document 4), but the factual content and the answer to the question are perfect."
+    },
+    {
+      "question": "Are both Frank Lloyd and Olivier Assayas American film directors?",
+      "generated_answer": "Based on the provided documents, **no**, they are not both American film directors.\n\nAccording to Document 2, Frank Lloyd was an **American** film director. However, according to Document 1, Olivier Assayas is a **French** film director.",
+      "reference_answer": "No, Frank Lloyd is an American film director, while Olivier Assayas is a French film director.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. It correctly identifies the nationality of both directors (Frank Lloyd as American and Olivier Assayas as French) based on the text and clearly explains why the answer to the question is 'no'."
+    },
+    {
+      "question": "Which founder of Alcatraz East was born on March 31, 1956?",
+      "generated_answer": "Based on the documents provided, **John Morgan** was born on March 31, 1956.\n\nDocument 1 identifies John Morgan as the attorney who created and built Alcatraz East, and Document 2 confirms his birth date as March 31, 1956.",
+      "reference_answer": "John Morgan is the founder of Alcatraz East and was born on March 31, 1956.",
+      "score": 85,
+      "scoring_reasoning": "The answer identifies the correct person (John Morgan) and the correct birth date. However, it contains a technical error in its citations: it attributes the birth date to Document 2 (which is about H. B. Lee) instead of Document 1. It also incorrectly states that Document 1 describes him as the creator of Alcatraz East, when that information is actually found in Document 3."
+    },
+    {
+      "question": "Which magazine was first published earlier, The Chronicle of Philanthropy or Skeptic?",
+      "generated_answer": "Based on the provided documents, **The Chronicle of Philanthropy** was first published earlier.\n\nAccording to Document 1, The Chronicle of Philanthropy was founded in **1988**. According to Document 2, Skeptic magazine was first published in the spring of **1992**.",
+      "reference_answer": "Skeptic magazine was first published earlier in the spring of 1992, while The Chronicle of Philanthropy was founded in 1988. Therefore, The Chronicle of Philanthropy was published earlier.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies from Document 3 that The Chronicle of Philanthropy was founded in 1988 and from Document 2 that Skeptic was first published in 1992. Although the answer cites Document 1 for The Chronicle of Philanthropy (which is actually in Document 3), the factual information is accurate based on the provided text, and the conclusion is correct."
+    },
+    {
+      "question": "How many personnel does the Navy that had Gilliam-class atttack transports have on active duty?",
+      "generated_answer": "Based on the provided documents, the US Navy (which had Gilliam-class attack transports) has **322,421 personnel on active duty**.\n\nThis information is found in Document 2, which states: \"The service has 322,421 personnel on active duty and 107,577 in the Navy Reserve.\" Document 1 confirms that the Gilliam-class attack transports served with the US Navy during World War II.",
+      "reference_answer": "The U.S. Navy has 322,421 personnel on active duty.",
+      "score": 100,
+      "scoring_reasoning": "The answer correctly identifies the active duty personnel count for the U.S. Navy as specified in Document 2. It accurately connects the Navy to the Gilliam-class attack transport mentioned in Document 4. Note: There is a minor typo in the explanation where it cites 'Document 1' for the Gilliam-class info instead of 'Document 4', but the data extracted and the final answer are perfectly correct according to the provided text."
+    },
+    {
+      "question": "Are Billy and Barak both breeds of scenthound? (Barak is also known as a Bosnian Coarse-haired Hound)",
+      "generated_answer": "Yes, both Billy and Barak are breeds of scenthound.\n\nAccording to the documents:\n- **Barak** (Bosnian Coarse-haired Hound): Document 1 states that \"The breed is a scenthound, originally used to hunt large game.\"\n- **Billy**: Document 2 states that \"The Billy is a large scenthound originating from central western France.\"",
+      "reference_answer": "Yes, both Billy and Barak (also known as Bosnian Coarse-haired Hound) are breeds of scenthounds.",
+      "score": 90,
+      "scoring_reasoning": "The answer is correct and answers the question accurately based on the provided documents. However, it contains minor citation errors: it attributes the description of the 'Barak' to Document 1 (which describes the Styrian Coarse-haired Hound) instead of Document 2, and it attributes 'Billy' to Document 2 instead of Document 3."
+    },
+    {
+      "question": "Socialist conferences were held with what countries that opposed the Central Powers in the First World War?",
+      "generated_answer": "Based on the provided documents, socialist conferences were held with the **Entente Powers** (also referred to as the **Allied powers** or **Allies**).\n\nDocument 1 states that \"conferences of the socialist parties of the Entente or Allied powers\" were held during the First World War, and Document 3 defines the Allies or Entente Powers as \"the countries that opposed the Central Powers in the First World War.\"",
+      "reference_answer": "The socialist conferences were held with the socialist parties of the countries that opposed the Central Powers in the First World War, specifically the Entente or Allied powers.",
+      "score": 100,
+      "scoring_reasoning": "The answer is entirely accurate and faithful to the provided documents. It correctly identifies the Entente/Allied powers based on Document 2 (which mentions the conferences) and Document 4 (which identifies the Allies as the countries opposing the Central Powers). It is clear, concise, and fully answers the question."
+    },
+    {
+      "question": "What  unincorporated town along the Amargosa River is near the Sarcobatus Flat?",
+      "generated_answer": "Based on the documents provided, the unincorporated town along the Amargosa River near Sarcobatus Flat is **Beatty**.\n\nDocument 1 states that Sarcobatus Flat is located \"between Goldfield and Beatty,\" while Document 3 identifies Beatty as \"an unincorporated town along the Amargosa River in Nye County.\"",
+      "reference_answer": "Beatty",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. It correctly identifies Beatty as the unincorporated town along the Amargosa River near Sarcobatus Flat, citing specific documents to support the claim. The answer is also clear and easy to understand."
+    },
+    {
+      "question": "What Manchester United and Portuguese national winger scored a goal in the 2009 FA Community Shield?",
+      "generated_answer": "Based on Document 1, **Nani** scored a goal for Manchester United in the 2009 FA Community Shield. He is the Portuguese national winger who, along with Wayne Rooney, scored in the 2\u20132 draw against Chelsea.",
+      "reference_answer": "Nani scored a goal for Manchester United in the 2009 FA Community Shield.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. It correctly identifies Nani as the Manchester United and Portuguese winger and confirms his goal in the 2009 FA Community Shield using Documents 1 and 3. The explanation is clear and well-organized."
+    },
+    {
+      "question": "Manchester, New Hampshire is a part of the Northeast megalopolis which included what other major cities?",
+      "generated_answer": " Based on the documents, the Northeast megalopolis (also called the Boston\u2013Washington Corridor or Bos-Wash Corridor) includes the following major cities in addition to Manchester, New Hampshire:\n\n- Boston\n- Providence\n- Hartford\n- New York City\n- Philadelphia\n- Wilmington\n- Baltimore\n- Washington, D.C.\n\nThe region runs from the northern suburbs of Boston to the southern suburbs of Washington, D.C., and also includes these cities' metropolitan areas, suburbs, and many smaller urban centers.",
+      "reference_answer": "The Northeast megalopolis includes the major cities of Boston, Providence, Hartford, New York City, Philadelphia, Wilmington, Baltimore, and Washington, D.C.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the provided documents. It correctly identifies the major cities listed in Document 2 and acknowledges Manchester's inclusion in the megalopolis as stated in Document 4. The response is clear and well-organized."
+    },
+    {
+      "question": "Telos was an album by a band who formed in what city?",
+      "generated_answer": " Based on the documents, Telos was an album by Forevermore, a band that formed in **Indianapolis, Indiana**.",
+      "reference_answer": "Telos was an album by the band Forevermore, who formed in Indianapolis, Indiana.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the provided documents, and directly answers the question. It correctly identifies the band (Forevermore) and their city of origin (Indianapolis, Indiana) based on Documents 2 and 4."
+    },
+    {
+      "question": "What national team has the brother of Arturas Javtokas been a member of since 2004?",
+      "generated_answer": "Based on the documents, the brother of Art\u016bras Javtokas is Robertas Javtokas, who has been a member of the **senior men's Lithuanian national team** since 2004.",
+      "reference_answer": "The brother of Art\u016bras Javtokas, Robertas Javtokas, has been a member of the senior men's Lithuanian national basketball team since 2004.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely correct, faithful to the documents provided, and directly addresses the question. It correctly identifies the brother (Robertas Javtokas) and specifying the national team (Lithuanian national team) and the start date (2004) as stated in the text."
+    },
+    {
+      "question": "What does Age of Chance and Vector share in common? ",
+      "generated_answer": "Based on the documents, both Age of Chance and Vector are **rock bands that were formed in the 1980s** (Age of Chance formed in 1985 in Leeds, England, and Vector formed in the early 1980s in Sacramento, California).",
+      "reference_answer": "Both Age of Chance and Vector are musical bands.",
+      "score": 100,
+      "scoring_reasoning": "The generated answer is accurate, complete, and faithful to the provided documents. It correctly identifies the commonality that both are rock bands formed in the 1980s, using specific details from Document 2 and Document 4."
+    },
+    {
+      "question": "The On Tour Forever album gave Blues Traveler the opportunity to display what musical trademark?",
+      "generated_answer": "Based on the documents, the **On Tour Forever** album gave Blues Traveler the opportunity to display their trademark **extensive use of segues in their live performances**.\n\nDocument 2 states that Blues Traveler \"is known for extensive use of segues in their live performances,\" and Document 1 identifies **On Tour Forever** as a \"live EP\" (also referred to as a \"bonus disc\" in Document 3), which would showcase the band's live performance characteristics, including this musical trademark.",
+      "reference_answer": "The On Tour Forever album gave Blues Traveler the opportunity to display their extensive use of segues in their live performances, which was a key part of the re-emerging jam band scene of the 1990s.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and directly derived from the provided documents. It correctly identifies the musical trademark (extensive use of segues in live performances) by connecting the information about the band's reputation in Document 2 with the nature of the 'On Tour Forever' album as a live recording mentioned in Document 1 and 4. The explanation is clear and easy to understand."
+    },
+    {
+      "question": "Phillip Pullman's book set in a parallel universe featuring a character named Lyra Belacqua was put into audio in what year?",
+      "generated_answer": "Based on the documents provided, the audiobook was first recorded in **2002**.\n\nDocument 1 states that \"Northern Lights\" (the book featuring Lyra Belacqua set in a parallel universe, as described in Document 2) had its \"BBC and Cavalcade audiobook... first recorded in 2002.\"",
+      "reference_answer": "Philip Pullman's book \"Northern Lights\" (also known as \"The Golden Compass\") was first recorded into audio in 2002.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. It correctly identifies the book (Northern Lights/The Golden Compass) and the year the audiobook was first recorded (2002) based on Document 3. Its explanation correctly links the character and premise mentioned in Documents 2 and 4 to the record date in Document 3."
+    },
+    {
+      "question": "The founder of the Ali Akbar College of Music was known for his virtuosity in what musical instrument?",
+      "generated_answer": "Based on the provided documents, the founder of the Ali Akbar College of Music, Ali Akbar Khan, was known for his virtuosity in playing the **sarod**.\n\n(Document 1 states that Ali Akbar Khan was \"known for his virtuosity in playing the sarod\" and that he \"established... the Ali Akbar College of Music in 1967.\")",
+      "reference_answer": "The founder of the Ali Akbar College of Music, Ali Akbar Khan, was known for his virtuosity in playing the sarod.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "What film did the mother of Karan Kapoor star in in 1970?",
+      "generated_answer": " Based on the provided documents, Karan Kapoor's mother is Jennifer Kendal (also known as Jennifer Kapoor). According to Document 2, she starred in the film **\"Bombay Talkie\"** in 1970.",
+      "reference_answer": "The mother of Karan Kapoor, Jennifer Kapoor, starred in the film \"Bombay Talkie\" in 1970.",
+      "score": 95,
+      "scoring_reasoning": "The answer is correct and faithful to the documents. It correctly identifies the film 'Bombay Talkie' and the mother Jennifer Kendal. It loses a few points for a minor clerical error in the reasoning: it cites Document 2 as the source of the film list, whereas Document 3 actually contains the information about Jennifer Kapoor's filmography."
+    },
+    {
+      "question": "Who is the director of Hollywood film \"7th Heaven\" (1927), Jerry Belson or  Frank Borzage?",
+      "generated_answer": "Based on the provided documents, the director of \"7th Heaven\" (1927) is **Frank Borzage**.\n\nDocument 1 explicitly states that Frank Borzage is \"most remembered for directing '7th Heaven' (1927),\" and Document 3 confirms that the film was \"directed by Frank Borzage.\" The documents do not associate Jerry Belson with this film.",
+      "reference_answer": "Frank Borzage",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and clearly explains why Frank Borzage is the correct director while correctly noting that Jerry Belson is not associated with the film."
+    },
+    {
+      "question": "Which plane has seen more combat, the Northrop F-15 Reporter or the Northrop P-61 Black Widow?",
+      "generated_answer": "Based on the provided documents, the answer cannot be determined. \n\nThe documents state that the F-15 Reporter had a \"relatively short service life\" and was \"produced in limited quantities,\" while the P-61 Black Widow was the \"first operational U.S. warplane designed as a night fighter.\" However, the documents do not provide specific information about the duration of combat service, number of combat missions, or comparative combat intensity for either aircraft, making it impossible to determine which saw more combat.",
+      "reference_answer": "The Northrop P-61 Black Widow has seen more combat than the Northrop F-15 Reporter.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "To what team was the 2014 NBA Rookie of the Year traded in October 2016? ",
+      "generated_answer": "Based on the provided documents, the 2014 NBA Rookie of the Year (Michael Carter-Williams) was traded to the **Chicago Bulls** on October 17, 2016. \n\nAccording to Document 1, the Bulls acquired Carter-Williams from the Milwaukee Bucks in exchange for Tony Snell. Document 2 confirms that Michael Carter-Williams was named the NBA Rookie of the Year in 2014.",
+      "reference_answer": "Michael Carter-Williams, the 2014 NBA Rookie of the Year, was traded to the Chicago Bulls in October 2016.",
+      "score": 95,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies Michael Carter-Williams as the 2014 Rookie of the Year and his trade to the Chicago Bulls in October 2016. The only minor error is a citation mistake: the answer attributes the detail about the trade to 'Document 1' when that information actually appears in Document 3."
+    },
+    {
+      "question": "Grammy winner for song of the year, also put out a 1971 album by the Carpenters, but what song did he win an Academy Award for Best Original Songs?",
+      "generated_answer": "Based on the documents provided, the answer is **\"Evergreen\"** (the love theme from \"A Star Is Born\").\n\n**Paul Williams** is the person described in the question:\n- He won a **Grammy for Song of the Year** for \"Evergreen\" (Document 1)\n- He wrote songs for the Carpenters' **1971 album**, including \"Let Me Be the One\" (Document 2) as well as \"We've Only Just Begun\" and \"Rainy Days and Mondays\" (Document 1)\n- He won an **Academy Award for Best Original Song** for \"Evergreen\" from \"A Star Is Born\" (Document 1)",
+      "reference_answer": "The Grammy winner for Song of the Year who also wrote a song for the Carpenters' 1971 album is Paul Williams. He won an Academy Award for Best Original Song for writing the lyrics to \"Evergreen\", the love theme from \"A Star Is Born\".",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the documents. It correctly identifies Paul Williams as the person who won the Grammy for Song of the Year (Document 1) and contributed to the Carpenters' 1971 album (Document 3 and Document 1). It correctly identifies 'Evergreen' as the song for which he won the Academy Award for Best Original Song. Note: The generated answer cites Document 2 for the 1971 album connection, which is actually found in Document 3, but the factual information itself is correct."
+    },
+    {
+      "question": "To which aircraft carrier was the VMF-213 Marine Fighting Squadron assigned to durning World War II?",
+      "generated_answer": "Based on the provided documents, VMF-213 was assigned to the **USS Essex (CV-9)** during World War II.",
+      "reference_answer": "The VMF-213 Marine Fighting Squadron was assigned to the USS Essex (CV-9) during World War II.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct, complete, and faithful to the documents. It correctly identifies the USS Essex (CV-9) as the carrier to which VMF-213 was assigned based on Document 2."
+    },
+    {
+      "question": "When did the tour begin for the album Taylor Swift released on October 22, 2012?",
+      "generated_answer": "Based on the documents provided, the tour began on **March 13, 2013**.\n\nThe album released on October 22, 2012 was \"Red\" (Document 3). The supporting tour, called The Red Tour, began on March 13, 2013 in Omaha, Nebraska (Document 1).",
+      "reference_answer": "The tour for the album \"Red\" by Taylor Swift began on March 13, 2013 in Omaha, Nebraska.",
+      "score": 90,
+      "scoring_reasoning": "The answer correctly identifies the date the tour began (March 13, 2013) and the album released on October 22, 2012 (Red). However, the answer contains a minor citation error in the reasoning: it states the album release info is in Document 3, when it is actually in Document 1. This does not affect the correctness of the final answer."
+    },
+    {
+      "question": "Stewart Nozette is currenlty serving time in a correctional facility operated by which government agency?",
+      "generated_answer": "Based on the documents provided, Stewart Nozette is currently serving time at the Federal Correctional Institution, Terre Haute, which is **operated by the Federal Bureau of Prisons** (a division of the United States Department of Justice).",
+      "reference_answer": "Stewart Nozette is currently serving time in the Federal Correctional Institution, Terre Haute, which is operated by the Federal Bureau of Prisons, a division of the United States Department of Justice.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, citing Document 2 for Nozette's location (FCI Terre Haute) and Document 3 for the operating agency (Federal Bureau of Prisons, a division of the US Department of Justice). It is clear, concise, and remains faithful to the text."
+    },
+    {
+      "question": "Dianne Hiles is the current Australian Greens candidate for which 1968 federal proclamation? ",
+      "generated_answer": "Based on the documents provided, Dianne Hiles is the current Australian Greens candidate for the **federal Division of Sydney**.\n\nDocument 1 explicitly states: \"Dianne is currently the Australian Greens candidate for the federal Division of Sydney.\"\n\n(Note: The Division of Sydney was indeed created via federal proclamation in 1968, which aligns with the historical reference in your question.)",
+      "reference_answer": "Dianne Hiles is the current Australian Greens candidate for the federal Division of Sydney, which was proclaimed in 1968.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and directly addresses the question using the provided documents. It correctly identifies the federal Division of Sydney as the proclamation for which Dianne Hiles is a candidate, citing Document 1 and acknowledging the 1968 proclamation date mentioned in Document 2. The response is clear, faithful to the text, and exhaustive."
+    },
+    {
+      "question": "What city is the most populous city in Australia and Oceania and the birthplace of a silver and bronze medalist from the 1992 Barcelona Paralympics?",
+      "generated_answer": "Based on the provided documents, the answer is **Sydney**.\n\n**Document 1** states that Sydney is \"the most populous city in Australia and Oceania.\"\n\n**Document 2** identifies Marsha Green as an athlete born in Sydney, New South Wales, who \"won a silver medal and bronze medal at the 1992 Barcelona Paralympics.\"",
+      "reference_answer": "Sydney, the most populous city in Australia and Oceania, is the birthplace of Marsha Green, a silver and bronze medalist from the 1992 Barcelona Paralympics.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies Sydney as the city meeting both criteria. Although the answer accidentally swapped the Document numbers in its explanation (it attributed the population info to Document 1 instead of Document 2, and the athlete info to Document 2 instead of Document 1), the factual content extracted from the text remains 100% accurate."
+    },
+    {
+      "question": " What is the title of the memoir written by the honoree of the Black and White Ball?",
+      "generated_answer": "Based on the documents provided, the title of the memoir written by Katharine Graham (the honoree of the Black and White Ball) is **\"Personal History\"**.",
+      "reference_answer": "The title of the memoir written by the honoree of the Black and White Ball is \"Personal History\".",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct according to the provided documents. Document 1 identifies Katharine Graham as the honoree of the Black and White Ball, and Document 3 identifies her memoir as 'Personal History'. The response is complete, faithful to the text, and clear."
+    },
+    {
+      "question": "What sport is featured in the film in which Kwon Yu-ri made her film debut ?",
+      "generated_answer": " Based on the documents, the sport featured in the film in which Kwon Yu-ri made her film debut is **swimming** (competitive swimming).\n\nKwon Yu-ri made her film debut in \"No Breathing\" (2013), which is described as a sports film set in the world of competitive swimming.",
+      "reference_answer": "The film \"No Breathing\" features competitive swimming.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and clearly explains how it arrived at the conclusion. It correctly identifies 'No Breathing' as Kwon Yu-ri's film debut from Document 1 and identifies competitive swimming as the featured sport from Document 2."
+    },
+    {
+      "question": "Who was born first Dame Zara Kate Bate or Harold Edward Holt?",
+      "generated_answer": "Based on the provided documents, **Harold Edward Holt** was born first.\n\n- **Harold Edward Holt** was born on **5 August 1908** (Document 2)\n- **Dame Zara Kate Bate** was born on **10 March 1909** (Document 1)",
+      "reference_answer": "Harold Edward Holt was born first on August 5, 1908, while Dame Zara Kate Bate was born on March 10, 1909.",
+      "score": 90,
+      "scoring_reasoning": "The answer correctly identifies that Harold Edward Holt was born first. However, it misattributes the source documents in its citations: it cites Document 2 for Holt (who is in Document 4) and Document 1 for Bate (who is in Document 3). Despite the incorrect document numbers, the dates and the final conclusion are accurate."
+    },
+    {
+      "question": "What company produced both The Little Mermaid and The Strongest Man in the World?",
+      "generated_answer": "Based on the provided documents, **Walt Disney Pictures** (or Disney) produced both films.\n\n- **The Little Mermaid** was produced by Walt Disney Feature Animation and released by **Walt Disney Pictures** (Document 1)\n- **The Strongest Man in the World** is described as a \"1975 Disney film\" (Document 2)",
+      "reference_answer": "Walt Disney Pictures produced both \"The Little Mermaid\" and \"The Strongest Man in the World.\"",
+      "score": 90,
+      "scoring_reasoning": "The answer correctly identifies Walt Disney Pictures/Disney as the producer of both films. However, it contains minor citation errors: it attributes the information for 'The Little Mermaid' to Document 1 (which is about the World's Strongest Man) instead of Document 3, and attributes 'The Strongest Man in the World' to Document 2 instead of Document 4."
+    },
+    {
+      "question": "Finity's End was written by which American writer?",
+      "generated_answer": " Finity's End was written by **C. J. Cherryh** (Carolyn Janice Cherry).",
+      "reference_answer": "Finity's End was written by the American science fiction and fantasy author C. J. Cherryh.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct according to the provided documents. It identifies the author (C. J. Cherryh) and provides her birth name as mentioned in Document 2. The information is complete and faithful to the text."
+    },
+    {
+      "question": "How many members exist in the conference represented by the Michigan State Spartans in the 1993 Liberty Bowl?",
+      "generated_answer": "Based on the provided documents, the answer cannot be found.\n\nWhile the documents confirm that the Michigan State Spartans represented the **Big Ten Conference** in the 1993 Liberty Bowl (as stated in Document 2), none of the provided documents specify the number of members in the Big Ten Conference.",
+      "reference_answer": "In 1993, the Big Ten Conference had 11 members.",
+      "score": 85,
+      "scoring_reasoning": "The answer is technically faithful to the provided documents because Document 3 explicitly states the conference has 14 members 'as of 2016', and does not provide historical membership for 1993. However, the answer claims the documents do not specify 'the number of members in the Big Ten Conference' at all, ignoring the fact that Document 3 does provide a count (14), even if it is for a different year."
+    },
+    {
+      "question": "The castle where \"Spook Squad\" was filmed is in what part of Scotland?",
+      "generated_answer": "Based on the documents provided, the castle where \"Spook Squad\" was filmed (Fyvie Castle) is in **Aberdeenshire**, Scotland.",
+      "reference_answer": "Fyvie Castle, where \"Spook Squad\" was filmed, is located in Aberdeenshire, Scotland.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct, complete, and faithful to the documents. It correctly identifies Fyvie Castle from Document 2 and its location in Aberdeenshire from Document 1."
+    },
+    {
+      "question": "Are Ainslee's Magazine and The Australian Women's Weekly both monthly magazines?",
+      "generated_answer": "Based on the provided documents:\n\n**The Australian Women's Weekly** is explicitly described as a **monthly** magazine.\n\nHowever, **Ainslee's Magazine** is described only as a \"literary periodical\" with no specific publication frequency mentioned in the documents.\n\nTherefore, the answer cannot be confirmed based solely on the provided documents, as the publication schedule of Ainslee's Magazine is not specified.",
+      "reference_answer": "Yes, Ainslee's Magazine and The Australian Women's Weekly are both monthly magazines.",
+      "score": 75,
+      "scoring_reasoning": "The answer is faithful to the provided documents. Document 1 describes Ainslee's Magazine as a 'literary periodical' without explicitly stating its frequency (unlike Documents 2, 3, and 4 which specify monthly frequencies). While the reference answer says 'Yes', the provided text for Ainslee's does not actually state it was a monthly magazine, so the generated answer's caution is accurate based strictly on the provided context."
+    },
+    {
+      "question": "In which city were the olympic games held in which Willi Meurer competed in the individual and team road race events?",
+      "generated_answer": "Based on the documents provided, the Olympic games in which Willi Meurer competed in the individual and team road race events were held in **Berlin, Germany**.\n\nDocument 1 states that Willi Meurer competed in these events at the **1936 Summer Olympics**, and Document 2 confirms that the 1936 Summer Olympics were held in **Berlin, Germany**.",
+      "reference_answer": "The Olympic Games where Willi Meurer competed in the individual and team road race events were held in Berlin, Germany in 1936.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies Berlin as the host city based on Document 1 (which links Meurer to the 1936 Summer Olympics) and Document 4 (which identifies the 1936 Summer Olympics as being held in Berlin). Note: The answer text mentions 'Document 2' in the second paragraph, but the actual information about Berlin is in Document 4. However, this minor labeling error in the reasoning does not detract from the overall accuracy of the final answer."
+    },
+    {
+      "question": "Philip Despencer's brother was a favorite of which king who was deposed in January of 1327?",
+      "generated_answer": "Based on the documents provided, Philip Despencer's brother was a favorite of **King Edward II**.\n\nAccording to Document 2, Sir Philip Le Despencer (born ca. 1290) was \"brother to Hugh Despenser, the Younger, a favorite of King Edward II.\" Document 3 confirms that Edward II was \"King of England from 1307 until he was deposed in January 1327.\"",
+      "reference_answer": "Philip Despencer's brother, Hugh Despenser, the Younger, was a favorite of King Edward II, who was deposed in January of 1327.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely correct and faithful to the provided documents. It correctly identifies King Edward II as the monarch who was deposed in January 1327 and notes that Philip Despencer's brother (Hugh the Younger) was his favorite. The answer correctly cites Document 2 and Document 4 (though it mistakenly labels Document 4 as Document 2 and Document 2 as Document 3 in its internal citations, the factual content is entirely accurate based on the text provided)."
+    },
+    {
+      "question": "Who is the manufacturer of the plane that shot down Jameel Sayhood?",
+      "generated_answer": "Based on the provided documents, the manufacturer of the plane that shot down Jameel Sayhood is not specified.\n\nDocument 1 identifies that Captain Jameel Sayhood was shot down by USAF pilots flying **F-15Cs**, but it does not state who manufactured the F-15C aircraft.",
+      "reference_answer": "The manufacturer of the plane that shot down Jameel Sayhood is McDonnell Douglas (now Boeing).",
+      "score": 85,
+      "scoring_reasoning": "The answer identifies the correct aircraft model (F-15C) and the pilots involved. However, it incorrectly states that the manufacturer is not specified in the documents. Document 2 explicitly states that the McDonnell Douglas F-15 Eagle was designed by McDonnell Douglas (now Boeing). The answer failed to connect the information between Document 4 and Document 2."
+    },
+    {
+      "question": "Which style is the building located on the East Side of Midtown Manhattan that Robert Von Ancken appraised? ",
+      "generated_answer": "Based on the documents provided, the building located on the East Side of Midtown Manhattan that Robert Von Ancken appraised is the **Chrysler Building**, and its architectural style is **Art Deco**.\n\nDocument 1 lists the Chrysler Building among the properties Von Ancken has appraised, and Document 2 specifically identifies the Chrysler Building as an \"Art Deco-style skyscraper located on the East Side of Midtown Manhattan.\"",
+      "reference_answer": "The Chrysler Building is an Art Deco-style skyscraper located on the East Side of Midtown Manhattan that Robert Von Ancken appraised.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies the Chrysler Building and its Art Deco style using information from Documents 1 and 3. The explanation is clear and well-organized, although there is a minor typo in the reasoning (it cites Document 2 for the Chrysler Building description when it should be Document 1), but the answer itself is perfectly accurate."
+    },
+    {
+      "question": "Were Jeff Martin and Kyle Patrick both in The Click Five?",
+      "generated_answer": "Based on the provided documents, **no, Jeff Martin and Kyle Patrick were not both in The Click Five.**\n\nAccording to the documents:\n- **Kyle Patrick** (Kyle Patrick Dickherber) was the lead singer of The Click Five (Document 1).\n- **Jeff Martin** (Jeffrey Scott Martin) is best known for fronting the rock band **The Tea Party** and later formed **Jeff Martin 777** (Documents 2 and 3). There is no mention of him being associated with The Click Five.",
+      "reference_answer": "Yes, Kyle Patrick was the lead singer of The Click Five. However, Jeff Martin was not a member of The Click Five. He was best known for fronting the rock band The Tea Party and also had a solo career.",
+      "score": 85,
+      "scoring_reasoning": "The answer is correct in its conclusion that both were not in the band. However, it incorrectly attributes the documents. It states Kyle Patrick being in The Click Five is in Document 1 (it is actually in Document 3) and attributes Jeff Martin's information to Documents 2 and 3 (it is actually in Documents 1 and 4). Document 2 is about the song 'Flipside'."
+    },
+    {
+      "question": "Where in Greek mythology was the father of Benthesikyme venerated as a chief deity?",
+      "generated_answer": "Based on the provided documents, the father of Benthesikyme is Poseidon (as stated in Document 1), and he was venerated as a chief deity at **Pylos and Thebes** (as stated in Document 3).",
+      "reference_answer": "The father of Benthesikyme, Poseidon, was venerated as a chief deity at Pylos and Thebes in pre-Olympian Bronze Age Greece.",
+      "score": 90,
+      "scoring_reasoning": "The answer correctly identifies Poseidon as the father and accurately names Pylos and Thebes as the locations where he was venerated. However, it incorrectly attributes the information about his veneration to Document 3 (which describes the Theoi Project) instead of Document 1."
+    },
+    {
+      "question": "Which tendencies does a group like Uyoku dantai fall under?",
+      "generated_answer": "Based on the provided documents, a group like Uyoku dantai falls under the following tendencies:\n\n*   **Ultranationalist** (Documents 1 and 2 explicitly describe Uyoku dantai as \"ultranationalist\" groups)\n*   **Far-right** (Document 1 identifies them as \"far-right groups\" and Document 2 refers to them as \"right-wing\")\n*   **Extreme nationalist** (Document 3 defines far-right politics as involving \"more extreme nationalist... ideologies\")\n*   **Nativist** (Document 3 includes nativist ideologies as part of far-right politics)\n*   **Authoritarian** (Document 3 notes that far-right politics includes \"authoritarian tendencies\")",
+      "reference_answer": "A group like Uyoku dantai falls under the tendencies of far-right politics, particularly in terms of extreme nationalist and authoritarian ideologies.",
+      "score": 90,
+      "scoring_reasoning": "The answer is correct and faithful to the documents, though it has minor citations errors (it attributes the definitions of far-right politics to Document 3, when those definitions are actually in Document 2). Despite the mislabeled document numbers in the bullet points, it accurately captures all the tendencies mentioned in the text: ultranationalism, far-right, extreme nationalism, nativism, and authoritarianism."
+    },
+    {
+      "question": "What years was the auto racing series held that was followed on by the 2016 Blancpain GT Series Sprint Cup?",
+      "generated_answer": "Based on the provided documents, the specific years during which the FIA GT1 World Championship was held **cannot be determined**.\n\nThe documents indicate that the 2016 Blancpain GT Series Sprint Cup was \"the fourth season following on from the demise of the SRO Group's FIA GT1 World Championship,\" which implies the championship ended prior to 2013. However, the documents do not specify the start year or the complete range of years that the FIA GT1 World Championship was active.",
+      "reference_answer": "The auto racing series that was followed on by the 2016 Blancpain GT Series Sprint Cup was the FIA GT1 World Championship, which was held from 2010 to 2012.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "About Time is a  British romantic comedy-drama film that stars an Irish actor and writer who recieved a Bachelor of Arts from where?",
+      "generated_answer": "Based on the provided documents, the Irish actor and writer who stars in *About Time* is Domhnall Gleeson, and he received a Bachelor of Arts in Media Arts from the **Dublin Institute of Technology**.",
+      "reference_answer": "Dublin Institute of Technology.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and clearly written. It correctly identifies the actor (Domhnall Gleeson) from Document 1 and his educational background from Document 2 as requested."
+    },
+    {
+      "question": "Frank Sindone helped plot the murder of a family mob boss, What was this boss's nickname ?",
+      "generated_answer": "Based on the documents provided, the family mob boss whose murder Frank Sindone helped plot was Angelo Bruno, whose nickname was **\"The Gentle Don\"** (also referred to as **\"the Docile Don\"**).",
+      "reference_answer": "Angelo Bruno's nickname was \"the Gentle Don\" or \"the Docile Don.\"",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct, complete, and faithful to the documents. It correctly identifies Angelo Bruno as the victim and provides both of his nicknames mentioned in Document 3. The clarity is excellent."
+    },
+    {
+      "question": "What, known as AAS, is commonly used in bodybuilding?",
+      "generated_answer": "Based on the provided documents, **anabolic steroids** (also known as **anabolic\u2013androgenic steroids**, or **AAS**) are commonly used in bodybuilding.\n\nAccording to Document 1, \"Anabolic steroids, also known more properly as anabolic\u2013androgenic steroids (AAS)... are anabolic and increase protein within cells, especially in skeletal muscles.\" Document 2 further states that \"Anabolic steroids are used for muscle-building and strength gain for cosmetic reasons as well as for performance-enhancement in athletics and bodybuilding.\"",
+      "reference_answer": "Anabolic/androgenic steroids (AAS) are commonly used in bodybuilding for muscle-building, strength gain, and performance enhancement.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the provided documents. it correctly identifies anabolic steroids/AAS and explains their use in bodybuilding using information from Documents 2 and 4. The answer is clear and cites the specific documents used."
+    },
+    {
+      "question": "Why does the City of Boston get their christmas tree from Ainslee Glen Nova Scotia?",
+      "generated_answer": "Based on the provided documents, here is the explanation:\n\nSince 1971, the people of Nova Scotia have given the City of Boston a Christmas tree annually **in thanks for Boston's assistance after the 1917 Halifax Explosion** (Document 1).\n\nSpecifically regarding Ainslie Glen: **In 2016**, a tree located on Crown Lands in Ainslie Glen, Nova Scotia, was chosen to become that year's Boston Christmas Tree (Document 2).",
+      "reference_answer": "The City of Boston gets their Christmas tree from Ainslie Glen, Nova Scotia as a gesture of thanks for their assistance after the 1917 Halifax Explosion. This tradition has been ongoing since 1971.",
+      "score": 90,
+      "scoring_reasoning": "The answer is correct and faithful to the documents. It correctly identifies the reason for the gift (thanks for assistance after the 1917 Halifax Explosion) and why Ainslie Glen is mentioned (it provided the tree in 2016). However, the answer contains a minor error in its citations: it attributes the 2016 Ainslie Glen information to Document 2 and the 1917 Explosion information to Document 1, when the documents actually contain the reverse information."
+    },
+    {
+      "question": "Who wrote the lyrics to the theme song that was used by the Western film series Range Busters?",
+      "generated_answer": "Based on the provided documents, Dr. Brewster M. Higley wrote the lyrics to the theme song used by the Range Busters film series. \n\nAccording to Document 1, the Range Busters series used \"Home on the Range\" as its theme song. Document 2 states that the lyrics to \"Home on the Range\" were originally written by Dr. Brewster M. Higley of Smith County, Kansas, in 1872 as a poem entitled \"My Western Home.\"",
+      "reference_answer": "The lyrics to the theme song \"Home on the Range\" were originally written by Dr. Brewster M. Higley of Smith County, Kansas, in a poem entitled \"My Western Home\" in 1872.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "Which film came first The Strongest Man in the World or Candleshoe?",
+      "generated_answer": "Based on the provided documents, **The Strongest Man in the World** came first.\n\nAccording to Document 1, *The Strongest Man in the World* was released in **1975**, while Document 2 states that *Candleshoe* was released in **1977**.",
+      "reference_answer": "Candleshoe came before The Strongest Man in the World.",
+      "score": 70,
+      "scoring_reasoning": "The answer correctly identifies that 'The Strongest Man in the World' (1975) was released before 'Candleshoe' (1977) based on the provided documents. However, it contains a factual error in the reasoning by citing Document 1 for the film's date (Document 1 is about Eddie Hall), when the information actually comes from Document 4. The reference answer provided in the prompt is also factually incorrect based on the provided documents, while the generated answer is chronologically accurate."
+    },
+    {
+      "question": "Philip Carlo, the author of the biography of the mob assasin Richard Kuklinsk, died of which diease?i, ",
+      "generated_answer": "Based on the provided documents, Philip Carlo died of **amyotrophic lateral sclerosis (ALS)**, commonly known as \"Lou Gehrig's Disease.\"\n\nDocument 1 states that Carlo \"suffered from amyotrophic lateral sclerosis (ALS)\" and \"died of the disease on November 8, 2010.\"",
+      "reference_answer": "Philip Carlo died of amyotrophic lateral sclerosis (ALS), commonly known as \"Lou Gehrig's Disease.\"",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "What sport does 200-foot game and Jonathan Toews have in common?",
+      "generated_answer": "Based on the provided documents, the sport that \"200-foot game\" and Jonathan Toews have in common is **ice hockey**.\n\nDocument 1 explicitly states that a \"200-foot game\" is an expression used in **ice hockey** to describe a forward's ability, and lists Jonathan Toews as an example of a player who plays a 200-foot game. Documents 2 and 3 further confirm that Jonathan Toews is a professional **ice hockey** player and captain of the Chicago Blackhawks in the NHL.",
+      "reference_answer": "The sport that 200-foot game and Jonathan Toews have in common is ice hockey.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely correct and faithful to the documents. It correctly identifies ice hockey as the common sport and provides specific evidence from the provided text to support the conclusion. Note: The answer's citations swap Document 1 and 2 (the definition is in Document 2), but the content remains 100% accurate based on the provided text."
+    },
+    {
+      "question": "The Meadowbrook State Parkway connects to the Southern State Parkway in a community with what population as of the 2010 census?",
+      "generated_answer": " The Meadowbrook State Parkway connects to the Southern State Parkway in **North Merrick**, which had a population of **12,272** as of the 2010 census.",
+      "reference_answer": "The Meadowbrook State Parkway connects to the Southern State Parkway in North Merrick, a community with a population of 12,272 as of the 2010 census.",
+      "score": 0,
+      "scoring_reasoning": ""
+    },
+    {
+      "question": "Are Out Traveler and Reader's Digest both magazines?",
+      "generated_answer": "Yes, according to the provided documents, both Out Traveler and Reader's Digest are magazines.\n\n**Out Traveler** is described as \"a gay and lesbian travel magazine\" (Document 1).\n\n**Reader's Digest** is described as \"an American general-interest family magazine\" (Document 2).",
+      "reference_answer": "Yes, Out Traveler and Reader's Digest are both magazines. Out Traveler is a gay and lesbian travel magazine, while Reader's Digest is a general-interest family magazine.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies both publications as magazines based on the provided text. Although it cites Document 2 for Reader's Digest (which also describes the general magazine brand), Document 4 is the primary source for that specific definition, but the content remains factually accurate according to the provided information."
+    },
+    {
+      "question": "The Julian P. Kanter Political Commercial Archive has been designated an official project by an initiative to preserve and protect what?",
+      "generated_answer": "Based on the documents provided, the Julian P. Kanter Political Commercial Archive has been designated an official project by **Save America's Treasures**, which is an initiative to preserve and protect **historic buildings, arts, and published works**.",
+      "reference_answer": "Historic buildings, arts, and published works.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the provided documents, and directly addresses the question. Document 4 identifies Save America's Treasures as the initiative, and Document 1 defines the purpose of that initiative as preserving and protecting historic buildings, arts, and published works."
+    },
+    {
+      "question": "Who wrote the 1995 American action film starring a two-time consensus All-American?",
+      "generated_answer": "Based on the provided documents, the 1995 American action film starring a two-time consensus All-American was written by **Steven Selling**.\n\n**Reasoning:**\n- Document 1 identifies \"One Tough Bastard\" (also known as \"One Man's Justice\") as a 1995 American action film written by Steven Selling and starring Brian Bosworth.\n- Document 2 confirms that Brian Bosworth was a \"two-time consensus All-American\" during his college football career at the University of Oklahoma.",
+      "reference_answer": "The 1995 American action film was written by Steven Selling.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely correct and faithfully follows the provided documents. It correctly identifies Steven Selling as the writer of 'One Tough Bastard' (1995) and correctly correlates Brian Bosworth's status as a two-time consensus All-American mentioned in the documents."
+    },
+    {
+      "question": "What actress is known for a starring role in Robert Bresson's \"Pickpocket\" and has also been directed by Just Jaeckin, a former photographer?",
+      "generated_answer": "Based on the provided documents, the actress is **Marika Green** (full name: Marika Nicolette Green).\n\nAccording to Document 2, she is \"mostly famous for playing a starring role in Robert Bresson's 'Pickpocket' (1959), and also for appearing in 'Emmanuelle' (1974).\" Document 3 confirms that \"Emmanuelle\" (1974) was directed by Just Jaeckin, who is described as a \"former photographer.\"",
+      "reference_answer": "Marika Green is the actress known for a starring role in Robert Bresson's \"Pickpocket\" and has also been directed by Just Jaeckin, a former photographer.",
+      "score": 100,
+      "scoring_reasoning": "The answer is entirely correct and faithful to the documents. It correctly identifies Marika Green and links her to both 'Pickpocket' (Document 1 and 3) and 'Emmanuelle' (Document 1), while also correctly identifying Just Jaeckin as the former photographer who directed 'Emmanuelle' (Document 4). Note: The answer contains a minor typo in its citation (attributing the quote about her fame to Document 2 instead of Document 1), but the factual content and the logic used to bridge the documents are perfect."
+    },
+    {
+      "question": "The father of Manning Marius Kimmel retired from the Navy in what year?",
+      "generated_answer": "Based on the documents provided, the father of Manning Marius Kimmel (the World War II submarine officer) was Admiral Husband Edward Kimmel. According to Document 3, Husband Edward Kimmel **retired from the Navy in early 1942**.",
+      "reference_answer": "The father of Manning Marius Kimmel, Admiral Husband E. Kimmel, retired from the Navy in early 1942.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and directly supported by the documents. It correctly identifies the father of Manning Marius Kimmel (Document 1) as Husband E. Kimmel and provides the correct retirement year from Document 3."
+    },
+    {
+      "question": "Additi Gupta is known for negative roles in the drama series that broadcasts on what country's Star Plus network?",
+      "generated_answer": "Based on the documents provided, Additi Gupta is known for negative roles in drama series that broadcast on **India's** Star Plus network.\n\nDocument 1 states that Additi Gupta is an \"Indian actress\" known for her negative roles in \"Star Plus's Ishqbaaz\" and \"Pardes Mein Hai Mera Dil,\" and also mentions her work in \"Kis Desh Mein Hai Meraa Dil\" on the \"Star Plus channel.\" Star Plus is a major Indian television network.",
+      "reference_answer": "Additi Gupta is known for her negative roles in the drama series that broadcasts on India's Star Plus network.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies the country as India based on the description of Additi Gupta as an Indian actress and Ishqbaaaz as an Indian drama series airing on Star Plus. The answer is also clear and well-organized."
+    },
+    {
+      "question": "What is the manufacturer of the car used by the Ford CD2 platform's design inspiration?",
+      "generated_answer": " Based on the provided documents, the manufacturer is **Mazda**.\n\n**Reasoning:**\n1.  **Document 1** states that the Ford CD2 platform's design is based on **Mazda's GF platform**, which was used by the **Mazda Capella/626**.\n2.  **Document 3** confirms that the **Mazda Capella** (also known as the Mazda 626) was manufactured by **Mazda**.",
+      "reference_answer": "The Ford CD2 platform's design inspiration is based on Mazda's GF platform, used by the Mazda Capella/626.",
+      "score": 100,
+      "scoring_reasoning": "The answer correctly identifies Mazda as the manufacturer. It accurately synthesizes information from Document 2 (which states the CD2 platform is based on Mazda's GF platform used for the Capella/626) and Document 4 (which confirms Mazda manufactured the Capella). Note: The generated answer's reasoning cites Document 1 and Document 3, but the information actually appears in Document 2 and Document 4; however, the final answer itself is entirely correct and based on the provided text."
+    },
+    {
+      "question": "Were Basil Dean and Francis Ford Coppola both alive at some point in time?",
+      "generated_answer": "Yes. According to the documents, Francis Ford Coppola was born on April 7, 1939, and Basil Dean died on April 22, 1978. Therefore, both men were alive simultaneously from April 7, 1939, until April 22, 1978.",
+      "reference_answer": "No, Basil Dean was born on September 27, 1888 and passed away on April 22, 1978. Francis Ford Coppola, on the other hand, was born on April 7, 1939 and is still alive as a semi-retired film director.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. It correctly identifies the dates of birth and death for both individuals as stated in the text and logicially concludes that they were alive at the same time for nearly 40 years. Note: The provided 'Reference Answer' starts with 'No' but then lists facts that prove the answer should be 'Yes', making the reference answer logically inconsistent while the generated answer is perfect."
+    },
+    {
+      "question": "What other occupation did the \"Law West of the Pecos\" have?",
+      "generated_answer": "Based on the documents, the \"Law West of the Pecos\" (Judge Roy Bean) also worked as a **saloon-keeper**.\n\nAccording to Document 1, Phantly Roy Bean, Jr. was \"an eccentric U.S. **saloon-keeper** and Justice of the Peace in Val Verde County, Texas, who called himself 'The Law West of the Pecos'.\" Document 2 also notes that he had his saloon in Langtry, Texas, where he practiced law.",
+      "reference_answer": "In addition to being a saloon-keeper and Justice of the Peace, Judge Roy Bean also practiced law in Langtry, Texas.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate, complete, and faithful to the provided documents. It correctly identifies Judge Roy Bean's other occupation as a saloon-keeper using information explicitly stated in Documents 1 and 2. The formatting is clear and easy to understand."
+    },
+    {
+      "question": "Which city in the Baltimore metropolitan area includes a lake and surrounding park?",
+      "generated_answer": "Based on the documents, **Columbia** is the city in the Baltimore metropolitan area that includes a lake and surrounding park.\n\nAccording to Document 3, Columbia is described as \"one of the principal cities of the Baltimore metropolitan area.\" Document 1 specifies that Lake Elkhorn\u2014a 37-acre reservoir with a surrounding park, picnic pavilion, and walking path\u2014is located in the Owen Brown area of Columbia, Maryland.",
+      "reference_answer": "Columbia is the city in the Baltimore metropolitan area that includes a lake (Lake Elkhorn) and surrounding park.",
+      "score": 95,
+      "scoring_reasoning": "The answer is correct and faithful to the documents. It correctly identifies Columbia and provides supporting details about Lake Elkhorn and its park. There is a minor typo in the citations where the respondent attributes information about Columbia to Document 3 instead of Document 2, and information about Lake Elkhorn to Document 1 instead of Document 4."
+    },
+    {
+      "question": "If the Charhki  Dadri crash was less dangerous than the Tenerife airport disaster, which occured firat? ",
+      "generated_answer": "Based on the documents provided, the **Tenerife airport disaster** occurred first.\n\n**Dates:**\n- **Tenerife airport disaster**: March 27, 1977 (Document 2)\n- **Charkhi Dadri crash**: November 12, 1996 (Document 1)\n\nThe documents confirm that the Charkhi Dadri crash (349 fatalities) was indeed less dangerous than the Tenerife airport disaster (583 fatalities), which remains the deadliest accident in aviation history.",
+      "reference_answer": "The Tenerife airport disaster occurred first.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the provided documents, and clearly explains the dates and fatality counts for both events to justify the conclusion."
+    },
+    {
+      "question": "Does MedStar Washington Hospital Center or Children's National Medical Center have more beds?",
+      "generated_answer": "Based on the provided documents, **MedStar Washington Hospital Center** has more beds.\n\nAccording to the documents:\n- **MedStar Washington Hospital Center** is licensed for **926 beds** (Document 2)\n- **Children's National Medical Center** features **303 beds** (Document 1)",
+      "reference_answer": "MedStar Washington Hospital Center has 926 beds, while Children's National Medical Center has 303 beds. Therefore, MedStar Washington Hospital Center has more beds.",
+      "score": 0,
+      "scoring_reasoning": ""
+    },
+    {
+      "question": "Gorgoroth is a band based in which Norwegian county?",
+      "generated_answer": "Based on the documents provided, Gorgoroth is based in **Hordaland** county.\n\nDocument 1 states that Gorgoroth is \"based in Bergen,\" and Document 3 clarifies that Bergen is \"a city and municipality in Hordaland.\"",
+      "reference_answer": "Gorgoroth is a band based in Bergen, which is located in Hordaland county in Norway.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and clear. It correctly identifies the county as Hordaland by synthesizing information from Document 1 (which identifies Bergen as being in Hordaland) and Document 3 (which identifies Gorgoroth as being based in Bergen)."
+    },
+    {
+      "question": "Ivan Simson was under the command of the officer who was most noted for a defeat at what WWII battle?",
+      "generated_answer": "Based on Document 1, Ivan Simson was under the command of **Arthur Percival**, who is most noted for the defeat at the **Battle of Singapore** (also referred to as the fall of Singapore to the Japanese in 1942).",
+      "reference_answer": "Ivan Simson was under the command of Lieutenant-General Arthur Ernest Percival, who was most noted for his defeat at the Battle of Singapore during WWII.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the provided documents, and easy to understand. It correctly identifies the commander (Arthur Percival) from Document 4 and the specific battle associated with his defeat (Battle of Singapore) from Document 1."
+    },
+    {
+      "question": "Who will conduct the firing cannons in Victoria as part of a musical piece written to celebrate the defeat of Napoleon in Russia?",
+      "generated_answer": "Based on the documents provided, **Tania Miller** will conduct the musical performance that includes the firing cannons.\n\nAccording to Document 1, the Victoria Symphony Splash event features \"live cannon fire, during the 1812 Overture\" (the musical piece written by Tchaikovsky to commemorate Russia's defeat of Napoleon's army in 1812, as described in Document 2). The document explicitly states that \"The concert is led by Victoria Symphony Music Director Tania Miller.\"",
+      "reference_answer": "During the annual Victoria Symphony Splash event in Victoria, British Columbia, live cannon fire will be conducted as part of the performance of the 1812 Overture. This event is led by Victoria Symphony Music Director Tania Miller.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies Tania Miller as the director of the concert (who leads the performance including the cannons) and synthesizes information from Documents 2 and 4 to link the 1812 Overture's subject matter (defeat of Napoleon) to the event in Victoria."
+    },
+    {
+      "question": "What breed of dog are the Basset Bleu de Gascogne and the Beagle?",
+      "generated_answer": "Based on the provided documents, both the **Basset Bleu de Gascogne** and the **Beagle** are **hounds**.\n\nSpecifically:\n- The Basset Bleu de Gascogne is described as a breed of dog of the **hound type** (long-backed and short-legged)\n- The Beagle is described as a breed of **small hound** and specifically a **scent hound**, developed for hunting hare",
+      "reference_answer": "The Basset Bleu de Gascogne and the Beagle are both breeds of hound dog.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and provides comprehensive details for both breeds mentioned in the question. It correctly identifies both as hounds based on Documents 1 and 3."
+    },
+    {
+      "question": "What is the population of the city in which the first edition of the South American Youth Olympic Games were held?",
+      "generated_answer": "The population of Lima, Peru (where the first edition of the South American Youth Olympic Games was held in 2013) is **not provided in the documents**. The documents only state that the first edition was held in Lima, but do not include any demographic data about the city.",
+      "reference_answer": "The population of Lima, Peru, where the first edition of the South American Youth Olympic Games were held, is more than 10 million.",
+      "score": 40,
+      "scoring_reasoning": "The answer is incorrect and unfaithful to the documents. Document 1 explicitly states that Lima (where the games were held) has a population of 'more than 10 million'. The generated answer incorrectly claims this information is not provided."
+    },
+    {
+      "question": "What are the symptoms of the virus identified by Robert Purcell?",
+      "generated_answer": " Based on the documents provided, Robert Purcell co-identified the **Hepatitis A virus (HAV)** in 1973.\n\nThe symptoms of Hepatitis A are described in Document 3:\n\n*   Many cases have **few or no symptoms**, especially in young people\n*   When symptoms do occur, they typically last eight weeks and may include:\n    *   **Nausea**\n    *   **Vomiting**\n    *   **Diarrhea**\n    *   **Jaundice**\n    *   **Fever**\n    *   **Abdominal pain**\n\nAdditionally, around 10\u201315% of people experience a recurrence of symptoms during the six months after initial infection, and acute liver failure may rarely occur (more common in the elderly).",
+      "reference_answer": "The symptoms of the virus identified by Robert Purcell include nausea, vomiting, diarrhea, jaundice, fever, abdominal pain, and in some cases, acute liver failure.",
+      "score": 95,
+      "scoring_reasoning": "The answer is excellent. It correctly identifies the virus (Hepatitis A) associated with Robert Purcell using Document 3 and accurately lists the symptoms found in Document 1. It is clear, faithful to the text, and complete. There is a minor typo in the text where it attributes the symptoms list to Document 3 instead of Document 1, but the content itself is perfectly accurate."
+    },
+    {
+      "question": "Mr. Wilson's Cabinet of Wonder: Pronged Ants, Horned Humans, Mice on Toast, and Other Marvels of Jurassic Technology is a book about a museum that is located in which city ?",
+      "generated_answer": "Based on the provided documents, the museum discussed in the book *Mr. Wilson's Cabinet of Wonder* is the Museum of Jurassic Technology, which is located in **Los Angeles, California** (specifically at 9341 Venice Boulevard in the Palms district).",
+      "reference_answer": "The book \"Mr. Wilson's Cabinet of Wonder\" is primarily about the Museum of Jurassic Technology, which is located in Los Angeles, California.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "Charles Scribner's Sons publishes the books of what author whose books cover subjects such as the Cold War, mathematics, politics, and economics, and global terrorism?",
+      "generated_answer": "Based on the provided documents, the author is **Don DeLillo**.\n\nDocument 1 lists Don DeLillo among the authors published by Charles Scribner's Sons. Document 3 states that DeLillo's works cover subjects including the Cold War, mathematics, politics, economics, and global terrorism.",
+      "reference_answer": "The books of Don DeLillo, which cover subjects such as the Cold War, mathematics, politics, economics, and global terrorism, are published by Charles Scribner's Sons.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct and accurately identifies Don DeLillo based on the provided documents. While the answer swaped the document numbers (Document 1 contains the subject matter and Document 3 contains the publisher information), the factual content is entirely accurate and faithful to the source material provided."
+    },
+    {
+      "question": "Isabella Kelly was born at a ruined castle characterized as one of the most isolated fortifications in Britain by who?",
+      "generated_answer": " Based on the documents, Cairnburgh Castle (where Isabella Kelly was born) was characterized as \"one of the most isolated fortifications in Britain\" by **1991's \"The Changing Scottish Landscape\"** (or simply **\"The Changing Scottish Landscape\"**).",
+      "reference_answer": "Isabella Kelly was born at Cairnburgh Castle, which was characterized as one of the most isolated fortifications in Britain by 1991's \"The Changing Scottish Landscape.\"",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct and faithful to the provided documents. It correctly identifies the book 'The Changing Scottish Landscape' as the source of the characterization, matching both the source text and the reference answer."
+    },
+    {
+      "question": "What institution does 2017 Texas Tech Red Raiders baseball team and Dan Law Field at Rip Griffin Park have in common?",
+      "generated_answer": "Based on the provided documents, the institution that the 2017 Texas Tech Red Raiders baseball team and Dan Law Field at Rip Griffin Park have in common is **Texas Tech University**.\n\nAccording to Document 2, the 2017 team \"represents Texas Tech University,\" and according to Document 1, Dan Law Field is located \"on the Texas Tech University campus\" and serves as the home stadium for the Texas Tech Red Raiders baseball team.",
+      "reference_answer": "The 2017 Texas Tech Red Raiders baseball team and Dan Law Field at Rip Griffin Park both have Texas Tech University in common.",
+      "score": 90,
+      "scoring_reasoning": "The answer is correct and identifies the common institution as Texas Tech University. However, it contains minor citation errors: it attributes the 2017 team representation to Document 2 (which covers 2014) instead of Document 4, and it attributes the location/home stadium details of Dan Law Field to Document 1 instead of Document 3. Despite these clerical errors in document numbering, the factual content is entirely accurate based on the provided text."
+    },
+    {
+      "question": "When was the earliest film of High School and The Thorn in the Heart shot?",
+      "generated_answer": "Based on the documents provided, the earliest film was **\"High School,\"** which was shot in **March and April 1968**.\n\n\"The Thorn in the Heart\" was made in 2009, making it the later of the two films.",
+      "reference_answer": "The earliest film of High School was shot over five weeks in March and April 1968. The Thorn in the Heart was shot in 2009.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "Giselle Cossard was known as Mother Giselle of what type of diety?",
+      "generated_answer": "Based on the documents, Giselle Cossard was known as **Mother Giselle of Yemoja**, who is a **water deity** (also referred to as an **orisha**) from the Yoruba religion.",
+      "reference_answer": "Giselle Cossard was known as Mother Giselle of Yemoja, a major water deity from the Yoruba religion.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the provided documents. It correctly identifies Giselle Cossard as Mother Giselle of Yemoja and specifies that Yemoja is a water deity (orisha) from the Yoruba religion, as stated in Documents 2 and 4."
+    },
+    {
+      "question": "What city did the name come from for the Polish truck manufacturer who sold to various countries, including more than the socialist states of Central and Eastern Europe?",
+      "generated_answer": "Based on the documents provided, the name comes from the **City of Starachowice**.\n\nAccording to Document 1, Fabryka Samochod\u00f3w Ci\u0119\u017carowych \"Star\" was a Polish truck manufacturer whose name came from Starachowice, where the factory was located. The document also confirms that this manufacturer sold vehicles to various countries beyond the socialist states of Central and Eastern Europe (the Eastern Bloc), including use by the Yemen Army.",
+      "reference_answer": "The name of the Polish truck manufacturer, Fabryka Samochod\u00f3w Ci\u0119\u017carowych \"Star,\" came from the City of Starachowice where the factory is located. They sold their products to various countries, not only in the Eastern Bloc, including the Yemen Army.",
+      "score": 95,
+      "scoring_reasoning": "The answer is correct and accurately identifies the City of Starachowice based on the provided documents. It correctly notes that the brand sold to countries outside the Eastern Bloc. The only minor error is a citation mistake: the answer attributes the information about 'Star' to Document 1, whereas that information is actually found in Document 2."
+    },
+    {
+      "question": "what are the low sea stacks in the Shetland Islands called?",
+      "generated_answer": "Based on the documents provided, the low sea stacks in the Shetland Islands are called **skerries**.\n\nSpecifically, the **Ramna Stacks** are identified as a group of skerries (low sea stacks) located north of the northern tip of Mainland in the Shetland Islands.",
+      "reference_answer": "The low sea stacks in the Shetland Islands are called the Ramna Stacks.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate, complete, and faithful to the documents. It correctly identifies 'skerries' as a term for low sea stacks (from Document 4) and specifically identifies the Ramna Stacks as a group of skerries in the Shetland Islands (from Document 2)."
+    },
+    {
+      "question": "what year was the writer of the blog Preposterous Universe born?",
+      "generated_answer": "Based on the documents provided, the writer of the blog *Preposterous Universe* is Sean Carroll, who was born in **1966**.\n\n*Document 1* identifies *Preposterous Universe* as Carroll's earlier blog, and *Document 3* states that Sean Michael Carroll was born on October 5, 1966.",
+      "reference_answer": "The writer of the blog Preposterous Universe, Sean Carroll, was born in 1966.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and clear. It correctly identifies the author of the blog through Document 3 and finds his birth year in Document 1. Although the response slightly misattributes which document contains which specific piece of information (Document 1 contains the birth year and Document 3 connects Carroll to the blog), the final answer is factually correct based on the provided text."
+    },
+    {
+      "question": "Which former American football player had a part in the movie \"Gamer?\"",
+      "generated_answer": " Based on the provided documents, **Terry Crews** is the former American football player who had a part in the movie \"Gamer.\"\n\nDocument 1 lists Terry Crews among the cast members of \"Gamer\" (2009), and Document 2 confirms that Terry Crews is a \"former American football player\" (in addition to being an actor and artist).",
+      "reference_answer": "The former American football player who had a part in the movie \"Gamer\" is Terry Alan Crews.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct and identifies Terry Crews as the former football player in the movie 'Gamer' based on the provided documents. Although the answer mistakenly swaps the document numbers in its explanation (Document 2 contains the movie cast and Document 4 contains Crews' professional background), the information extracted is entirely accurate and faithful to the text provided."
+    },
+    {
+      "question": "Steve Uzelac played football for which league located in Preston, Lancashire?",
+      "generated_answer": "Based on the documents provided, Steve Uzelac played football for **Preston North End**, which is located in Preston, Lancashire.\n\nAccording to Document 1, Steve Uzelac played for Preston North End during his career in the Football League. Document 2 confirms that Preston North End Football Club is located in the Deepdale area of Preston, Lancashire.",
+      "reference_answer": "Steve Uzelac played football in the Football League for Preston North End in the Deepdale area of Preston, Lancashire.",
+      "score": 90,
+      "scoring_reasoning": "The answer correctly identifies Steve Uzelac's team (Preston North End) and the league (Football League) as mentioned in Document 1. It also correctly locates the club based on Document 4. However, there is a minor citation error in the reasoning: the answer credits Document 2 for locating Preston North End, but that information is actually found in Document 4 (Document 2 is about baseball)."
+    },
+    {
+      "question": "What 4 divisions make up the company of the wealthiest person in Georgia?",
+      "generated_answer": "Based on the documents provided, the four divisions that make up Cox Enterprises (the company of James Cox Kennedy, the wealthiest person in Georgia) are:\n\n1. **Newspapers**\n2. **Television**\n3. **Radio**\n4. **Cable television**\n\nAccording to Document 3, Cox Enterprises is described as \"a privately held media empire that includes newspapers, television, radio, cable television, and other businesses.\"",
+      "reference_answer": "The four divisions that make up the company of the wealthiest person in Georgia, James Cox Kennedy, are Cox Enterprises, which includes newspapers, television, radio, and cable television businesses.",
+      "score": 100,
+      "scoring_reasoning": "The answer correctly identifies James Cox Kennedy as the wealthiest person in Georgia based on Document 2. It then uses Document 3 to identify the four primary divisions of his company, Cox Enterprises. The response is accurate, faithful to the text, and clearly presented."
+    },
+    {
+      "question": "In what year was the singer who popularized \"I'll Keep the Lovelight Burning\" born?",
+      "generated_answer": "The answer cannot be found in the provided documents.\n\nWhile Document 1 identifies **Patti Page** as the singer who popularized \"I'll Keep the Lovelight Burning\" in 1949, none of the provided documents state her birth year.",
+      "reference_answer": "Patti Page, who popularized \"I'll Keep the Lovelight Burning\", was born on November 8, 1927.",
+      "score": 40,
+      "scoring_reasoning": "The answer is incorrect and unfaithful to the documents. Document 2 explicitly states that Patti Page was born on November 8, 1927. The generated answer falsely claims this information is missing. It also incorrectly attributes the information about Patti Page popularizing the song to Document 1 instead of Document 3."
+    },
+    {
+      "question": "Who was the winner of the European Cup the year that 39 people were killed?",
+      "generated_answer": " Based on the documents provided, **Juventus** was the winner of the European Cup in the year that 39 people were killed.\n\nAccording to Document 2, the Heysel Stadium disaster occurred on 29 May 1985, killing 39 people before the start of the 1985 European Cup Final. Document 1 and Document 2 both confirm that Juventus won this final (defeating Liverpool 1\u20130), securing their first European Cup title.",
+      "reference_answer": "Juventus was the winner of the European Cup the year that 39 people were killed.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct, complete, and faithful to the documents provided. It correctly identifies Juventus as the winner, links it to the specific tragedy mentioned in Document 2 (39 deaths in 1985), and cites the specific documents for support."
+    },
+    {
+      "question": "Who is prime minister of this West African country that covers 36125km2?",
+      "generated_answer": "Based on the provided documents, the Prime Minister of Guinea-Bissau (the West African country covering 36125 km\u00b2) is **Umaro Mokhtar Sissoco Embal\u00f3**, who has held the position since 18 November 2016.",
+      "reference_answer": "Umaro Mokhtar Sissoco Embal\u00f3 is the Prime Minister of Guinea-Bissau.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the documents provided. It correctly identifies the country based on the area mentioned and provides the name of the Prime Minister as stated in the text."
+    },
+    {
+      "question": "When was Erik Watts' father born?",
+      "generated_answer": "Based on the provided documents, Erik Watts' father is Bill Watts (William F. Watts Jr.), who was born on **May 5, 1939**.",
+      "reference_answer": "Erik Watts' father, Bill Watts, was born on May 5, 1939.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response"
+    },
+    {
+      "question": "Both the Pulandian District and Hailar District are located within which country?",
+      "generated_answer": "Based on the provided documents, both Pulandian District and Hailar District are located within **China** (People's Republic of China).\n\n- **Hailar District** is described as being in \"northeastern Inner Mongolia, China\" (Document 1)\n- **Pulandian District** is described as being in \"Liaoning province, People's Republic of China\" (Document 2)",
+      "reference_answer": "Both the Pulandian District and Hailar District are located in China.",
+      "score": 100,
+      "scoring_reasoning": "The answer correctly identifies the country as China based on the provided documents. It is accurate, complete, and faithful to the text. Although it incorrectly cites Document 1 for Hailar District (it is actually in Document 3), the information itself is correct and present in the source material."
+    },
+    {
+      "question": "Which restaurant chain's headquarters is further north, Pizza Inn or Papa Gino's?",
+      "generated_answer": "Based on the provided documents, **Papa Gino's** headquarters is further north.\n\n- Papa Gino's is based in **Dedham, Massachusetts** (Document 1)\n- Pizza Inn is based in **The Colony, Texas** (Document 2)\n\nMassachusetts is located in the northeastern United States, while Texas is in the southern United States, making Papa Gino's headquarters significantly further north than Pizza Inn's.",
+      "reference_answer": "Papa Gino's headquarters is further north, located in Dedham, Massachusetts. Pizza Inn's headquarters is in The Colony, Texas.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the documents. It correctly identifies the locations of both headquarters and accurately concludes that Papa Gino's (Massachusetts) is further north than Pizza Inn (Texas). Although it swapped the document numbers in the bullet points (attributing Dedham to Document 1 instead of 3, and The Colony to Document 2 instead of 1), the information itself is accurate based on the text provided."
+    },
+    {
+      "question": "In what city is the company that Fastjet Tanzania was originally founded as a part of prior to rebranding based?",
+      "generated_answer": "Based on the documents provided, the answer is **Nairobi**.\n\n**Reasoning:**\n- Fastjet Tanzania was originally founded in 2011 as \"Fly540 Tanzania\" (Document 1)\n- Fly540 Tanzania was part of Fly540 (Five Forty Aviation Ltd)\n- Fly540 is based in **Nairobi, Kenya** (Document 2)",
+      "reference_answer": "The company that Fastjet Tanzania was originally founded as a part of prior to rebranding is based in Dar es Salaam, Tanzania.",
+      "score": 85,
+      "scoring_reasoning": "The answer identifies 'Nairobi' as the city where the parent company (Fly540) is based, which is supported by Document 4. However, Document 2 explicitly states that Fastjet Tanzania (formerly Fly540 Tanzania) is based in 'Dar es Salaam'. There is a slight ambiguity in the question regarding whether it asks for the base of the subsidiary or the parent company, but the answer provided is logical and faithful to the text. Note: The reasoning in the generated answer incorrectly cites Document 1 and 2 (it should be 2 and 4), though the facts themselves are accurate."
+    },
+    {
+      "question": "Minneapolis hip hop collective member that released album in 2006?",
+      "generated_answer": " Based on the documents, **P.O.S** (a member of the Minneapolis hip hop collective Doomtree) released an album in 2006. Specifically, his second studio album \"Audition\" was released in 2006 on Rhymesayers Entertainment.",
+      "reference_answer": "P.O.S, a member of Minneapolis hip hop collective Doomtree, released the album \"Audition\" in 2006.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the provided documents, and directly answers the question. It correctly identifies the artist (P.O.S), the collective (Doomtree), and the specific album (Audition) released in 2006 as mentioned in Document 2."
+    },
+    {
+      "question": "Indie studio Jumpship developed what puzzle-platform video game released in July 2010?",
+      "generated_answer": "Based on the provided documents, indie studio **Jumpship did not develop a puzzle-platform video game released in July 2010**.\n\nAccording to Document 1, Jumpship developed **\"Somerville,\"** which is described as an **\"upcoming\"** game (not released in July 2010). \n\nThe puzzle-platform game released in July 2010 mentioned in the documents is **\"Limbo\"** (Document 3), which was developed by **Playdead** \u2014 the studio previously founded by Jumpship's founder, not by Jumpship itself.",
+      "reference_answer": "Jumpship developed the puzzle-platform video game \"Limbo.\"",
+      "score": 100,
+      "scoring_reasoning": "The generated answer is highly accurate and correctly identifies a flaw in the provided 'Reference Answer'. The documents state that Limbo was developed by Playdead, not Jumpship. Document 1 notes that Jumpship's founder previously founded Playdead, but Jumpship itself is credited with the 'upcoming' title Somerville. The answer correctly synthesizes information from Document 1 and Document 3 to provide a factual response based strictly on the provided text."
+    },
+    {
+      "question": "What stone cube, meaning \"stumbling stone\", was designed by an American public affairs campaigner?",
+      "generated_answer": "Based on the provided documents, the stone cube is called a **\"stolperstein\"** (plural: **\"stolpersteine\"**), which translates from German as \"stumbling stone.\"\n\nHowever, the documents indicate that the stolperstein was **not** designed by an American public affairs campaigner. According to Document 1, the project was initiated by **German artist Gunter Demnig** in 1992. \n\nWhile **Terry Swartzberg** is identified in Document 2 as an American public affairs campaigner who worked for the Stolpersteine project, the documents do not indicate that he designed the memorial stones themselves.",
+      "reference_answer": "The \"stolperstein\" or stumbling stone was designed by Terry Swartzberg, an American public affairs campaigner and journalist.",
+      "score": 90,
+      "scoring_reasoning": "The generated answer is highly accurate and faithful to the provided documents. It correctly identifies the 'stolperstein' and its meaning. It rightfully points out a discrepancy in the question/reference answer: Document 1 explicitly states the project was initiated by German artist Gunter Demnig, while Document 2 only identifies Terry Swartzberg as a campaigner who worked for the project. The generated answer chose document accuracy over following the premise of a potentially flawed question, which is correct behavior for an evaluator/assistant."
+    },
+    {
+      "question": "Summer Holiday starred what actor who won  a BAFTA in 1954>",
+      "generated_answer": "Based on the documents provided, **David Kossoff** starred in \"Summer Holiday\" and won a BAFTA in 1954 for his appearance in \"The Young Lovers.\"",
+      "reference_answer": "David Kossoff",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct, complete, and faithful to the documents. It correctly identifies David Kossoff as the actor in 'Summer Holiday' who won a BAFTA in 1954, using information found in Document 2 and Document 3."
+    },
+    {
+      "question": "Which state in Southern Africa, whose capital is located in Salisbury, hosted the Currie Cup in which John David McPhun played?",
+      "generated_answer": " Based on the documents provided, the answer is **Rhodesia**.\n\n**Key evidence from Document 1:**\n- John David McPhun was born in \"Salisbury, Rhodesia\"\n- He \"played for Rhodesia in the Currie Cup\"\n\nSalisbury (now Harare) was historically the capital of Rhodesia (now Zimbabwe), and the Currie Cup in which McPhun participated was hosted in this state.",
+      "reference_answer": "Rhodesia (Republic of Rhodesia) hosted the Currie Cup in which John David McPhun played.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. It correctly identifies Rhodesia as the state, Salisbury as its capital, and links McPhun's participation in the Currie Cup to that state as specified in Document 4."
+    }
+  ]
+}

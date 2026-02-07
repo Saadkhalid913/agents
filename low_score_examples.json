@@ -1,0 +1,142 @@
+[
+  {
+    "example_index": 22,
+    "question": "The founder of the Ali Akbar College of Music was known for his virtuosity in what musical instrument?",
+    "documents": [
+      "Ali Akbar Bahman (also Mirza Ali Akbar Khan; b. 1883 - d. 1967) was an Iranian employee of the Foreign Ministry, diplomat and politician under the Qajar and Pahlavi dynasties. Ali Akbar Bahman was during the rule of the Qajar dynasty as well as at the time of Reza Shah Pahlavi ambassador and minister.",
+      "The Ali Akbar College of Music (AACM) is the name of three schools founded by Indian musician Ali Akbar Khan to teach Indian classical music. The first was founded in 1956 in Calcutta, India. The second was founded in 1967 in Berkeley, California, but moved to its current location in San Rafael, California the next year. The third was founded in 1985 in Basel, Switzerland and is run by Khan's disciple Ken Zuckerman.",
+      "Achan (English: \"Father\" ) is a 2011 Malayalam-language film directed by Ali Akbar and starring Thilakan. The film is based on a drama of the same name written by S. R. Raveendran, who also scripted the film. The film's shooting began on 28 July 2010, and was scheduled to release by October. Several issues regarding the casting of Thilakan, an expelled member of the Association of Malayalam Movie Artists, led the film to a delayed release on 14 January 2011. Ali Akbar\u2019s wife produced the film; the music was composed by his daughter.",
+      "Ali Akbar Khan (14 April 192218 June 2009) was a Hindustani classical musician of the Maihar gharana, known for his virtuosity in playing the sarod. Trained as a classical musician and instrumentalist by his father, Allauddin Khan, Khan also composed several classical \"ragas\" and film scores. He established a music school in Calcutta in 1956, and the Ali Akbar College of Music in 1967, which moved with him to the USA and is now based in San Rafael, California, with a branch in Basel, Switzerland."
+    ],
+    "generated_answer": "Based on the provided documents, the founder of the Ali Akbar College of Music, Ali Akbar Khan, was known for his virtuosity in playing the **sarod**.\n\n(Document 1 states that Ali Akbar Khan was \"known for his virtuosity in playing the sarod\" and that he \"established... the Ali Akbar College of Music in 1967.\")",
+    "reference_answer": "The founder of the Ali Akbar College of Music, Ali Akbar Khan, was known for his virtuosity in playing the sarod.",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  },
+  {
+    "example_index": 25,
+    "question": "Which plane has seen more combat, the Northrop F-15 Reporter or the Northrop P-61 Black Widow?",
+    "documents": [
+      "The Northrop F-15 Reporter (later RF-61) was an American unarmed photographic reconnaissance aircraft. Based on the Northrop P-61 Black Widow night fighter, it was the last piston-powered photo-reconnaissance aircraft designed and produced for the United States Air Force. Though produced in limited quantities, and with a relatively short service life, the F-15's aerial photographs of the Korean Peninsula would prove vital in 1950, when North Korea invaded the south.",
+      "The Northrop YF-17 (nicknamed \"Cobra\") was a prototype lightweight fighter aircraft designed for the United States Air Force's Lightweight Fighter (LWF) technology evaluation program. The LWF was initiated because many in the fighter community believed that aircraft like the F-15 Eagle were too large and expensive for many combat roles. The YF-17 was the culmination of a long line of Northrop designs, beginning with the N-102 Fang in 1956, continuing through the F-5 family.",
+      "The Northrop P-61 Black Widow, named for the American spider, was the first operational U.S. warplane designed as a night fighter, and the first aircraft designed to use radar. The P-61 had a crew of three: pilot, gunner, and radar operator. It was armed with four 20 mm (.79 in) Hispano M2 forward-firing cannons mounted in the lower fuselage, and four .50 in (12.7 mm) M2 Browning machine guns mounted in a remote-controlled dorsal gun turret.",
+      "Black Widow (paint mix) (also Black Widow US and Black Widow EU) is a non-commercial open source project, led by mechman (US), wbassett (US) and custard10 (EU), to create paint mix for DIY (do it yourself) projection screens from easily accessible materials all over US and EU, which could outperform some commercial projection screens."
+    ],
+    "generated_answer": "Based on the provided documents, the answer cannot be determined. \n\nThe documents state that the F-15 Reporter had a \"relatively short service life\" and was \"produced in limited quantities,\" while the P-61 Black Widow was the \"first operational U.S. warplane designed as a night fighter.\" However, the documents do not provide specific information about the duration of combat service, number of combat missions, or comparative combat intensity for either aircraft, making it impossible to determine which saw more combat.",
+    "reference_answer": "The Northrop P-61 Black Widow has seen more combat than the Northrop F-15 Reporter.",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  },
+  {
+    "example_index": 48,
+    "question": "What years was the auto racing series held that was followed on by the 2016 Blancpain GT Series Sprint Cup?",
+    "documents": [
+      "The 2016 Blancpain GT Sports Club was the second season of the SRO Group's Blancpain GT Sports Club, an auto racing series for grand tourer cars. The Blancpain GT Sports Club is a championship for Bronze and Iron drivers only. The \"Iron\" categorisation is within the Bronze category, for drivers over the age of 60. All drivers must participate with GT3-spec cars, RACB G3 cars or GTE-spec cars.",
+      "The Blancpain GT Series is a sports car racing series organized by the St\u00e9phane Ratel Organisation (SRO) with the approval of the F\u00e9d\u00e9ration Internationale de l'Automobile (FIA). It features grand tourer racing cars modified from production road cars complying with the FIA's GT3 regulations. The series is divided into two separate championships, the Blancpain GT Series Sprint Cup and the Blancpain GT Series Endurance Cup. Although the Blancpain GT Series Endurance Cup is organised since 2011, the inaugural season of the Blancpain GT Series is 2014, because in that year the FIA GT Series became the Blancpain Sprint Series, which is now the Blancpain GT Series Sprint Cup. The series is primarily sponsored by Swiss watchmaker Blancpain.",
+      "The 2016 Blancpain GT Series Sprint Cup was the fourth season following on from the demise of the SRO Group's FIA GT1 World Championship (an auto racing series for grand tourer cars), the third with the designation of Blancpain Sprint Series or Blancpain GT Series Sprint Cup. After developing their partnership, Blancpain and the SRO decided that 2016 would see both the Sprint and Endurance Series further integrated into the Blancpain GT Series, putting the emphasis on the prestigious overall drivers' and manufacturers' titles causing the Sprint Series name to change from Blancpain Sprint Series to Blancpain GT Series Sprint Cup.",
+      "The FIA GT1 World Championship was a world championship sports car racing series developed by the SRO Group and regulated by the F\u00e9d\u00e9ration Internationale de l'Automobile (FIA), held from 2010 to 2012. It featured multiple grand tourer race cars based on production road cars and conforming with the GT1 (2010\u20132011) and GT3 (2012) regulations competing in one-hour races on multiple continents. All cars were performance balanced with weight and restrictor adjustments to artificially equalise their performance. Championships were awarded each season for drivers and teams."
+    ],
+    "generated_answer": "Based on the provided documents, the specific years during which the FIA GT1 World Championship was held **cannot be determined**.\n\nThe documents indicate that the 2016 Blancpain GT Series Sprint Cup was \"the fourth season following on from the demise of the SRO Group's FIA GT1 World Championship,\" which implies the championship ended prior to 2013. However, the documents do not specify the start year or the complete range of years that the FIA GT1 World Championship was active.",
+    "reference_answer": "The auto racing series that was followed on by the 2016 Blancpain GT Series Sprint Cup was the FIA GT1 World Championship, which was held from 2010 to 2012.",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  },
+  {
+    "example_index": 53,
+    "question": "Who wrote the lyrics to the theme song that was used by the Western film series Range Busters?",
+    "documents": [
+      "The Range Busters was a film series of 24 Westerns of the adventures of a trio of cowboys, many filmed at the Corriganville Movie Ranch, produced by George W. Weeks and distributed by Monogram Pictures. The series used \"Home on the Range\" as its theme song with each film featuring the heroes waving goodbye and promising to return in another adventure.",
+      "Fugitive Valley is a 1941 American film directed by S. Roy Luby, one of the Range Busters series of western films.",
+      "Bullets and Saddles is a 1943 western film produced by Monogram Pictures Corporation. It is the final entry in the Range Busters film series and also uses footage from Fugitive Valley, another film in the series.",
+      "\"Home on the Range\" is a classic western folk song sometimes called the \"unofficial anthem\" of the American West. The lyrics were originally written by Dr. Brewster M. Higley of Smith County, Kansas, in a poem entitled \"My Western Home\" in 1872. In 1947, it became the state song of the U.S. state of Kansas. In 2010, members of the Western Writers of America chose it as one of the Top 100 western songs of all time."
+    ],
+    "generated_answer": "Based on the provided documents, Dr. Brewster M. Higley wrote the lyrics to the theme song used by the Range Busters film series. \n\nAccording to Document 1, the Range Busters series used \"Home on the Range\" as its theme song. Document 2 states that the lyrics to \"Home on the Range\" were originally written by Dr. Brewster M. Higley of Smith County, Kansas, in 1872 as a poem entitled \"My Western Home.\"",
+    "reference_answer": "The lyrics to the theme song \"Home on the Range\" were originally written by Dr. Brewster M. Higley of Smith County, Kansas, in a poem entitled \"My Western Home\" in 1872.",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  },
+  {
+    "example_index": 55,
+    "question": "Philip Carlo, the author of the biography of the mob assasin Richard Kuklinsk, died of which diease?i, ",
+    "documents": [
+      "The Story of a Great Schoolmaster is a 1924 biography of Frederick William Sanderson (1857-1922) by H. G. Wells. It is the only biography Wells wrote. Sanderson was a personal friend, having met Wells in 1914 when his sons George Philip ('Gip'), born in 1901, and Frank Richard, born in 1903, became pupils at Oundle School, of which Sanderson was headmaster from 1892 to 1922. After Sanderson died while giving a lecture at University College London at which he was introduced by Wells, the famous author agreed to help produce a biography to raise money for the school. But in December 1922, after disagreements emerged with Sanderson's widow about his approach to the subject, Wells withdrew from the official biography (published in 1923 as \"Sanderson of Oundle\"; Wells wrote much of the text but the volume was published without listing an author) and published his own work separately.",
+      "Cervantes is a highly fictionalized 1967 film biography of the early life of Miguel de Cervantes (1547\u20131616). It was the first screen biography of the author. Directed by Vincent Sherman, and filmed in color, it stars Horst Buchholz as Cervantes, Gina Lollobrigida as a prostitute with whom he becomes involved, Jos\u00e9 Ferrer as Hassan Bey, the Turk who held Cervantes in captivity, Louis Jourdan as Cardinal Giulio Acquaviva, and Fernando Rey as King Philip II.",
+      "Richard Leonard Kuklinski (April 11, 1935 \u2013 March 5, 2006) was an American contract killer and serial killer who was convicted of murdering five people, though he likely killed at least several dozen more. He was associated with members of the American Mafia, namely the DeCavalcante crime family of Newark, New Jersey, and the Five Families of New York City.",
+      "Philip Carlo (April 18, 1949 \u2013 November 8, 2010) was a journalist and best selling biographer of Thomas Pitera, Richard Kuklinski, Anthony Casso, and Richard Ramirez. Carlo suffered from amyotrophic lateral sclerosis (ALS), commonly known as \"Lou Gehrig's Disease\". He was bound to a wheelchair and respirator, but retained his ability to speak normally during his lifetime. He died of the disease on November 8, 2010 at age 61."
+    ],
+    "generated_answer": "Based on the provided documents, Philip Carlo died of **amyotrophic lateral sclerosis (ALS)**, commonly known as \"Lou Gehrig's Disease.\"\n\nDocument 1 states that Carlo \"suffered from amyotrophic lateral sclerosis (ALS)\" and \"died of the disease on November 8, 2010.\"",
+    "reference_answer": "Philip Carlo died of amyotrophic lateral sclerosis (ALS), commonly known as \"Lou Gehrig's Disease.\"",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  },
+  {
+    "example_index": 57,
+    "question": "The Meadowbrook State Parkway connects to the Southern State Parkway in a community with what population as of the 2010 census?",
+    "documents": [
+      "North Merrick is a community and census-designated place in Nassau County, New York, United States. The population was 12,272 at the 2010 census.",
+      "The Bronx River Parkway (sometimes abbreviated as the Bronx Parkway) is a 19.12 mi long parkway in downstate New York in the United States. It is named for the nearby Bronx River, which it parallels. The southern terminus of the parkway is at Story Avenue near Bruckner Expressway in the Bronx neighborhood of Soundview. The northern terminus is at the Kensico Circle in North Castle, Westchester County, where the parkway connects to the Taconic State Parkway and, via a short connector, New York State Route\u00a022 (NY\u00a022). Within the Bronx, the parkway is maintained by the New York State Department of Transportation and is designated New York State Route\u00a0907H (NY\u00a0907H), an unsigned reference route. In Westchester County, the parkway is maintained by the Westchester County Department of Public Works and is designated unsigned County Route\u00a09987 (CR\u00a09987).",
+      "Jones Beach State Park (colloquially, \"Jones Beach\") is a state park of the U.S. state of New York. It is in southern Nassau County, in the hamlet of Wantagh, on Jones Beach Island, a barrier island linked to Long Island by the Meadowbrook State Parkway, Wantagh State Parkway, and Ocean Parkway.",
+      "The Meadowbrook State Parkway (also known as the Meadowbrook, the Meadowbrook Parkway or the MSP) is a 12.52 mi parkway in Nassau County, New York, in the United States. Its southern terminus is at a full cloverleaf interchange with the Bay and Ocean parkways in Jones Beach State Park. The parkway heads north, crossing South Oyster Bay and intersecting Loop Parkway before crossing onto the mainland and connecting to the Southern State Parkway in North Merrick. It continues north to the village of Carle Place, where the Meadowbrook Parkway ends at exit 31A of the Northern State Parkway. The Meadowbrook Parkway is designated New York State Route 908E (NY 908E), an unsigned reference route. Most of the road is limited to non-commercial traffic, like most parkways in the state of New York; however, the portion south of Merrick Road is open to commercial traffic."
+    ],
+    "generated_answer": " The Meadowbrook State Parkway connects to the Southern State Parkway in **North Merrick**, which had a population of **12,272** as of the 2010 census.",
+    "reference_answer": "The Meadowbrook State Parkway connects to the Southern State Parkway in North Merrick, a community with a population of 12,272 as of the 2010 census.",
+    "score": 0,
+    "scoring_reasoning": ""
+  },
+  {
+    "example_index": 69,
+    "question": "Does MedStar Washington Hospital Center or Children's National Medical Center have more beds?",
+    "documents": [
+      "MedStar Washington Hospital Center is the largest private hospital in Washington, D.C. A member of MedStar Health, the not-for-profit Hospital Center is licensed for 926 beds. Health services in primary, secondary and tertiary care are offered to adult and neonatal patients. It also serves as a teaching hospital for Georgetown University School of Medicine.",
+      "Banner - University Medical Center Tucson (BUMCT), formerly University Medical Center and the University of Arizona Medical Center, is a private, non-profit, 487-bed acute-care hospital located on the campus of the University of Arizona in Tucson, Arizona. BUMCT is part of the University of Arizona Health Sciences (UAHS) center campus which includes the university's Colleges of Medicine, Nursing, Pharmacy and Public Health. It is Southern Arizona's only Level I trauma center for both adult and pediatric patients. BUMCT is one of two University of Arizona affiliated academic medical centers in Tucson with Banner - University Medical Center South (formerly Kino Community Hospital, University Physicians Healthcare Hospital, and University of Arizona Medical Center - South Campus) being the other such institution. The area's only dedicated Children's hospital, Banner Children's at Diamond Children's Medical Center, is located within and adjacent to BUMCT.",
+      "MedStar Georgetown University Hospital is one of the national capital area's oldest academic teaching hospitals. It is a not-for-profit, acute care teaching and research facility located in the Georgetown neighborhood of the Northwest Quadrant of Washington, D.C. MedStar Georgetown is co-located with the Georgetown University Medical Center and is affiliated with the Georgetown University School of Medicine. Its clinical services represent one of the largest, most geographically diverse, and fully integrated healthcare and delivery networks in the area. MedStar Georgetown is home to the internationally known Lombardi Comprehensive Cancer Center, as well as centers of excellence in the neurology, neurosurgery, psychiatry, gastroenterology, transplant and vascular surgery. Originally named Georgetown University Hospital, it became part of the MedStar Health network in 2000.",
+      "Children\u2019s National Medical Center (formerly DC Children\u2019s Hospital) is ranked among the top 10 children\u2019s hospitals in the country by \"U.S. News & World Report.\" Located just north of the McMillan Reservoir and Howard University, it shares grounds with Washington Hospital Center, National Rehabilitation Hospital, and the DC Veterans Affairs Medical Center. Kurt Newman, M.D., has served as the president and chief executive officer of Children\u2019s National since 2011. Children's National is a not-for-profit institution that performs more than 450,000 visits each year. Featuring 303 beds and a Level IV NICU, Children's National is the regional referral center for pediatric emergency, trauma, cancer, cardiac and critical care as well as neonatology, orthopaedic surgery, neurology and neurosurgery."
+    ],
+    "generated_answer": "Based on the provided documents, **MedStar Washington Hospital Center** has more beds.\n\nAccording to the documents:\n- **MedStar Washington Hospital Center** is licensed for **926 beds** (Document 2)\n- **Children's National Medical Center** features **303 beds** (Document 1)",
+    "reference_answer": "MedStar Washington Hospital Center has 926 beds, while Children's National Medical Center has 303 beds. Therefore, MedStar Washington Hospital Center has more beds.",
+    "score": 0,
+    "scoring_reasoning": ""
+  },
+  {
+    "example_index": 76,
+    "question": "Mr. Wilson's Cabinet of Wonder: Pronged Ants, Horned Humans, Mice on Toast, and Other Marvels of Jurassic Technology is a book about a museum that is located in which city ?",
+    "documents": [
+      "Henry Donald Wilson (Nov. 21, 1923 - November 12, 2006), generally referred to as H. Donald Wilson was a database pioneer and entrepreneur. He was also the first president and one of the principal creators of the Lexis legal information system, and Nexis. An attorney by training who became an information industry innovator and a venture capital consultant to numerous businesses, Mr. Wilson was also an internationalist and a conservationist. At the time of his death, he was chairman of Lessac Technologies Inc., a text-to-voice software venture based on nearly fifty years of partnership with Arthur Lessac.",
+      "Mr. Wilson's Cabinet of Wonder: Pronged Ants, Horned Humans, Mice on Toast, and Other Marvels of Jurassic Technology is a book by Lawrence Weschler primarily about the Museum of Jurassic Technology and, more broadly, the history and role of museums.",
+      "The Museum of Jurassic Technology is a museum located at 9341 Venice Boulevard in the Palms district of Los Angeles, California. It was founded by David Hildebrand Wilson and Diana Drake Wilson (husband and wife) in 1988.",
+      "John Guy Wilson (1842\u20131892) was a Manchester, UK patent agent and the founder of Wilson Gunn, one of the oldest firms of Patent and Trade Mark Attorneys in the UK. John G. Wilson built up the business until his death in the 1890s. As a side line he acted as agent to the Alliance Insurance Company. There is no record that Mr. Wilson ever became a member of the Chartered Institute of Patent Agents."
+    ],
+    "generated_answer": "Based on the provided documents, the museum discussed in the book *Mr. Wilson's Cabinet of Wonder* is the Museum of Jurassic Technology, which is located in **Los Angeles, California** (specifically at 9341 Venice Boulevard in the Palms district).",
+    "reference_answer": "The book \"Mr. Wilson's Cabinet of Wonder\" is primarily about the Museum of Jurassic Technology, which is located in Los Angeles, California.",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  },
+  {
+    "example_index": 80,
+    "question": "When was the earliest film of High School and The Thorn in the Heart shot?",
+    "documents": [
+      "High School is a 1968 American documentary film directed by Frederick Wiseman that shows a typical day for a group of students at Northeast High School in Philadelphia, Pennsylvania. It was one of the first direct cinema (or cin\u00e9ma v\u00e9rit\u00e9) documentaries. It was shot over five weeks in March and April 1968. The film was not shown in Philadelphia at the time of its release, due to Wiseman's concerns over what he called \"vague talk\" of a lawsuit.",
+      "Stuart Hall High School is an all boys college-preparatory high school located in San Francisco's Pacific Heights district. Stuart Hall High School is a relatively new school, opening in the fall of 2000. Together, Stuart Hall High School, Convent of the Sacred Heart High School, Convent Elementary, and Stuart Hall for Boys, is part of an international network of schools known as the Schools of the Sacred Heart.",
+      "Miami Senior High School is a public high school located at 2450 SW 1st Street in Miami, Florida, United States, and operated by Miami-Dade County Public Schools. Founded in 1903, it is the oldest high school in Miami-Dade County. The school building is famous for its architecture and is a historic landmark. Miami Senior High School has a rich alumni base, with many graduates of the high school going on to varied, prominent careers. The high school originally served the earliest settling families of Miami in the first half of the 20th century. By the late 1960s, with an increase in Miami's population, its student body grew at a fast pace.",
+      "The Thorn in the Heart (French: \"L'\u00e9pine dans le coeur\" ) is a 2009 French documentary film directed by Michel Gondry. It was given a special screening at the 2009 Cannes Film Festival and was also screened at the Sheffield Doc/Fest."
+    ],
+    "generated_answer": "Based on the documents provided, the earliest film was **\"High School,\"** which was shot in **March and April 1968**.\n\n\"The Thorn in the Heart\" was made in 2009, making it the later of the two films.",
+    "reference_answer": "The earliest film of High School was shot over five weeks in March and April 1968. The Thorn in the Heart was shot in 2009.",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  },
+  {
+    "example_index": 91,
+    "question": "When was Erik Watts' father born?",
+    "documents": [
+      "Ockelbo-Lundgren, born \"Erik Lundgren\" (19 February 1919 \u2013 16 September 1967), first became known during the 1940s when he became known as \"Trollkarlen fr\u00e5n Ockelbo\" (The Wizard from Ockelbo) when he in a Ford 38 powered by a V8 engine with eight carburettors producing 280\u00a0hp participated in several races in speeds up to 220\u00a0km/h. He was a forest farmer and car dealer. His father was a blacksmith in Mo By and from him Erik Lundgren got his talent for constructing things. He raced around in various cars, often with his wife Ulla as co-driver.",
+      "Nathaniel Gist (15 October 1733 \u2013 1812) was born in Maryland and fought during the French and Indian War and the American Revolutionary War. He was reputed to be the father of Sequoyah the famous Cherokee by Wurteh Watts. Like his father Christopher Gist (1706\u20131759), he served in Braddock's Expedition in 1755 and the Forbes Expedition in 1758. The outbreak of the American Revolution found him on the frontier. At first suspected of sympathizing with the British, he convinced the Americans of his loyalty.",
+      "Erik Watts (born December 19, 1967) is an American semi-retired professional wrestler. He is best known for his appearances with World Championship Wrestling and the World Wrestling Federation in the 1990s. He is the son of WWE Hall of Famer Bill Watts.",
+      "William F. Watts Jr. (born May 5, 1939) is an American former professional wrestler, promoter, and WWE Hall of Fame Inductee (2009). Watts was famous under his \"Cowboy\" gimmick in his wrestling career, and then as a tough, no-nonsense promoter in the Mid-South United States, which grew to become the Universal Wrestling Federation (UWF)."
+    ],
+    "generated_answer": "Based on the provided documents, Erik Watts' father is Bill Watts (William F. Watts Jr.), who was born on **May 5, 1939**.",
+    "reference_answer": "Erik Watts' father, Bill Watts, was born on May 5, 1939.",
+    "score": 0,
+    "scoring_reasoning": "Error parsing score response"
+  }
+]
