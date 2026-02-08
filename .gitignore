@@ -1,2 +1,7 @@
-.env 
+.env
 venv
+__pycache__/
+docs/output/*.pdf
+.chroma_nq/
+.ipynb_checkpoints/
+benchmark_results.json

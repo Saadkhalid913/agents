@@ -1,0 +1,46 @@
+---
+title: "AI Agents: From First Principles"
+subtitle: "A Practical Guide to Building AI Agent Systems in Python"
+author: "Saad Khalid"
+date: \today
+documentclass: report
+classoption:
+  - 11pt
+  - a4paper
+
+# Fonts
+mainfont: "Charter"
+sansfont: "Helvetica"
+monofont: "DejaVu Sans Mono"
+
+# Page geometry
+geometry:
+  - top=2.5cm
+  - bottom=2.5cm
+  - left=3cm
+  - right=3cm
+
+# Table of contents
+toc: true
+toc-depth: 3
+
+# Code highlighting
+highlight-style: tango
+
+# Links
+colorlinks: true
+linkcolor: "blue"
+urlcolor: "blue"
+citecolor: "blue"
+
+# Headers and footers via fancyhdr
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[L]{\leftmark}
+  \fancyhead[R]{\thepage}
+  \fancyfoot[C]{\small AI Agents: From First Principles}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.2pt}
+---

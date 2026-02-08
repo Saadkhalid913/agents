@@ -1,4 +1,5 @@
 import os
+import argparse
 import openai
 import json
 from dotenv import load_dotenv
@@ -233,7 +234,6 @@ def run_evaluation(num_examples: Optional[int] = None, max_workers: int = 8) -> 
     # Dictionary to store results indexed by example index (for proper ordering)
     results_by_index = {}
     scores = []
-    low_score_examples = []
 
     # Use ThreadPoolExecutor for parallel API calls
     # Each worker can make independent API calls while others wait for IO
@@ -254,18 +254,6 @@ def run_evaluation(num_examples: Optional[int] = None, max_workers: int = 8) -> 
                 scores.append(result["score"])
                 completed += 1
 
-                # Save low-scoring examples for debugging
-                if result["score"] < 10:
-                    low_score_examples.append({
-                        "example_index": example_idx,
-                        "question": result["question"],
-                        "documents": ds[example_idx]["documents"],
-                        "generated_answer": result["generated_answer"],
-                        "reference_answer": result["reference_answer"],
-                        "score": result["score"],
-                        "scoring_reasoning": result["scoring_reasoning"],
-                    })
-
                 # Print progress as tasks complete
                 print(
                     f"[{completed}/{eval_size}] Completed example {example_idx + 1}")
@@ -275,15 +263,6 @@ def run_evaluation(num_examples: Optional[int] = None, max_workers: int = 8) -> 
 
             except Exception as e:
                 print(f"[Error] Example {idx + 1} failed: {e}\n")
-
-    # Save low-scoring examples to file
-    if low_score_examples:
-        low_score_file = "low_score_examples.json"
-        low_score_examples.sort(key=lambda x: x["example_index"])
-        with open(low_score_file, "w") as f:
-            json.dump(low_score_examples, f, indent=2)
-        print(
-            f"Saved {len(low_score_examples)} low-scoring examples (score < 10) to {low_score_file}\n")
 
     # Reconstruct results in original order
     results = [results_by_index[i]
@@ -312,13 +291,32 @@ def run_evaluation(num_examples: Optional[int] = None, max_workers: int = 8) -> 
 
 
 if __name__ == "__main__":
-    # Run evaluation on a small subset first (change to None to eval entire dataset)
+    # ========================================================================
+    # CLI ARGUMENTS
+    # ========================================================================
+    # When run standalone, uses defaults. When called from 1_rag.py, the
+    # orchestrator passes --eval-model, --scoring-model, and --num-examples
+    # to allow benchmarking different model combinations.
+    # ========================================================================
+    parser = argparse.ArgumentParser(
+        description="In-context QA evaluation on HotpotQA")
+    parser.add_argument("--eval-model", default=EVAL_MODEL,
+                        help="Model to evaluate (default: %(default)s)")
+    parser.add_argument("--scoring-model", default=SCORING_MODEL,
+                        help="Model for scoring answers (default: %(default)s)")
+    parser.add_argument("--num-examples", type=int, default=100,
+                        help="Number of examples to evaluate (default: %(default)s)")
+    args = parser.parse_args()
+
+    # Override module-level constants with CLI args
+    EVAL_MODEL = args.eval_model
+    SCORING_MODEL = args.scoring_model
+
     print("=" * 80)
     print("HOTPOTQA IN-CONTEXT EVALUATION")
     print("=" * 80 + "\n")
 
-    # Start with 3 examples for testing
-    results = run_evaluation(num_examples=100)
+    results = run_evaluation(num_examples=args.num_examples)
 
     # Print summary
     print("\n" + "=" * 80)
@@ -332,8 +330,10 @@ if __name__ == "__main__":
     for range_label, count in results['score_distribution'].items():
         print(f"  {range_label}: {count} examples")
 
-    # Save detailed results to file
-    output_file = "evaluation_results.json"
-    with open(output_file, "w") as f:
-        json.dump(results, f, indent=2)
-    print(f"\nDetailed results saved to {output_file}")
+    # Machine-readable result line for orchestrator (1_rag.py)
+    result_json = {
+        "overall_score": results["overall_score"],
+        "num_examples": results["num_examples_evaluated"],
+        "score_distribution": results["score_distribution"],
+    }
+    print(f"RESULT_JSON:{json.dumps(result_json)}")

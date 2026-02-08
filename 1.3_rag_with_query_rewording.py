@@ -1,4 +1,5 @@
 import os
+import argparse
 import openai
 import json
 import chromadb
@@ -7,38 +8,44 @@ from dotenv import load_dotenv
 from datasets import load_dataset
 from typing import Optional, Any, cast
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
 # Load environment variables (including OPENROUTER_API_KEY)
 load_dotenv()
 
 # ============================================================================
 # EVALUATION SETUP
 # ============================================================================
-# This script runs an in-context evaluation on the HotpotQA dataset.
+# This script runs a RAG evaluation with QUERY RE-WORDING on HotpotQA.
 #
-# What is an in-context evaluation?
-# - We take a question and supporting documents (context)
-# - The model being evaluated (gemini-2.5-flash-lite) reads these documents
-#   and generates an answer
-# - A stronger evaluator model (gemini-3-flash) grades the answer
-# - We aggregate scores to get an overall performance metric
+# Improvement over naive RAG (script 2):
+# Before embedding search, an LLM rewrites the user's question into a
+# search-optimised query. This helps because:
+# - User questions are conversational; embedding search works better with
+#   keyword-rich, declarative statements
+# - Multi-hop questions can be decomposed into the key facts being sought
+# - Removing filler words and rephrasing improves cosine-similarity hits
 #
-# The key difference from RAG evaluation: we're evaluating the model's
-# ability to extract and synthesize information from provided context,
-# not the retrieval system's ability to find relevant documents.
+# Pipeline per example:
+#   1. Rewrite the question into an embedding-friendly search query (LLM call)
+#   2. Embed documents into an ephemeral ChromaDB collection
+#   3. Retrieve top-k documents using the REWRITTEN query
+#   4. Pass retrieved docs + ORIGINAL question to the eval model
+#   5. Score the answer with a stronger evaluator model
 # ============================================================================
 
 # Initialize OpenRouter client with the OpenAI SDK
-# OpenRouter provides a unified API for multiple models
 client = openai.OpenAI(
     api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url="https://openrouter.ai/api/v1",
 )
 
-# Model being evaluated - this is the model we want to test
-EVAL_MODEL = "openrouter/pony-alpha"
+# Model being evaluated
+EVAL_MODEL = "moonshotai/kimi-k2.5"
 
-# Scoring model - a stronger model that will grade the answers
-# We use a stronger model to ensure fair and accurate evaluation
+# Model used to rewrite queries — fast and cheap is fine here
+REWRITE_MODEL = "google/gemini-3-flash-preview"
+
+# Scoring model — stronger model for fair evaluation
 SCORING_MODEL = "google/gemini-3-flash-preview"
 
 # RAG retrieval settings
@@ -52,32 +59,66 @@ embedding_fn = OpenAIEmbeddingFunction(
 )
 
 # Load the HotpotQA test dataset from Hugging Face
-# HotpotQA is a multi-hop QA dataset that requires reasoning across
-# multiple documents to answer questions
 print("Loading HotpotQA dataset...")
 ds = load_dataset("rungalileo/ragbench", "hotpotqa", split="test")
 print(f"Dataset loaded with {len(ds)} examples\n")
 
 
-def generate_answer(question: str, documents: list[str], example_index: int = 0) -> str:
+def rewrite_query(question: str) -> str:
     """
-    Generate an answer using RAG: embed documents into a fresh ChromaDB
-    collection, retrieve the top-k most relevant docs, then pass only
-    those to the eval model.
+    Use an LLM to rewrite the user question into a search-optimised query
+    that will better match relevant document embeddings.
 
     Args:
-        question: The question to answer
+        question: The original user question
+
+    Returns:
+        A rewritten query string optimised for embedding retrieval
+    """
+    system_prompt = """You are a search query optimizer. Given a user question, rewrite it into a short, keyword-rich search query that will work well for semantic similarity search over a document collection.
+
+Rules:
+- Output ONLY the rewritten query, nothing else
+- Remove filler words and conversational phrasing
+- Keep all important entities, names, dates, and concepts
+- For multi-hop questions, include the key facts being sought
+- Keep it concise — 1-2 sentences max"""
+
+    response = client.chat.completions.create(
+        model=REWRITE_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": question},
+        ],
+        max_tokens=150,
+    )
+
+    rewritten = (response.choices[0].message.content or "").strip()
+    # Fallback to original question if rewrite is empty
+    return rewritten if rewritten else question
+
+
+def generate_answer(question: str, documents: list[str], example_index: int = 0) -> tuple[str, str]:
+    """
+    Generate an answer using RAG with query re-wording:
+    1. Rewrite the question for better retrieval
+    2. Embed documents into a fresh ChromaDB collection
+    3. Retrieve top-k docs using the rewritten query
+    4. Pass retrieved docs + original question to the eval model
+
+    Args:
+        question: The original question to answer
         documents: List of document strings that serve as context
         example_index: Index to ensure unique collection names in parallel runs
 
     Returns:
-        The generated answer as a string
+        Tuple of (generated_answer, rewritten_query) so we can log both
     """
-    # Create a fresh ephemeral ChromaDB client per question so documents
-    # from different examples never mix
-    chroma_client = chromadb.Client()
+    # Step 1: Rewrite the query for better embedding retrieval
+    rewritten_query = rewrite_query(question)
 
-    # Use a unique collection name to avoid conflicts in parallel execution
+    # Step 2: Create a fresh ephemeral ChromaDB client per question
+    chroma_client = chromadb.Client()
     collection_name = f"docs_{example_index}_{os.getpid()}"
 
     collection = chroma_client.get_or_create_collection(
@@ -90,9 +131,9 @@ def generate_answer(question: str, documents: list[str], example_index: int = 0)
         ids=[f"doc_{i}" for i in range(len(documents))],
     )
 
-    # Retrieve the top-k documents most relevant to the question
+    # Step 3: Retrieve top-k documents using the REWRITTEN query
     results = collection.query(
-        query_texts=[question], n_results=min(TOP_K, len(documents)))
+        query_texts=[rewritten_query], n_results=min(TOP_K, len(documents)))
 
     # Safely extract retrieved documents
     retrieved_docs = []
@@ -105,7 +146,7 @@ def generate_answer(question: str, documents: list[str], example_index: int = 0)
     context = "\n\n".join(
         [f"[Document {i+1}]\n{doc}" for i, doc in enumerate(retrieved_docs)])
 
-    # System prompt instructs the model to answer based ONLY on provided context
+    # Step 4: Pass retrieved docs + ORIGINAL question to the eval model
     system_prompt = """You are a helpful assistant that answers questions based on provided documents.
 Your task is to:
 1. Carefully read all provided documents
@@ -115,7 +156,6 @@ Your task is to:
 
 If the answer cannot be found in the documents, say so explicitly."""
 
-    # User prompt combines the retrieved documents and the question
     user_prompt = f"""Documents:
 {context}
 
@@ -123,7 +163,6 @@ Question: {question}
 
 Please answer the question based on the provided documents."""
 
-    # Call the eval model with retrieved context
     response = client.chat.completions.create(
         model=EVAL_MODEL,
         messages=[
@@ -133,13 +172,13 @@ Please answer the question based on the provided documents."""
         max_tokens=4096,
     )
 
-    # Clean up the collection to free up memory
+    # Clean up the collection
     try:
         chroma_client.delete_collection(name=collection_name)
     except Exception:
         pass
 
-    return response.choices[0].message.content or ""
+    return response.choices[0].message.content or "", rewritten_query
 
 
 def score_answer(
@@ -149,13 +188,7 @@ def score_answer(
     reference_answer: Optional[str] = None
 ) -> tuple[int, str]:
     """
-    Score the generated answer using the evaluator model (gemini-3-flash).
-
-    The scoring model evaluates:
-    - Correctness: Is the answer factually correct based on the documents?
-    - Completeness: Does it answer all parts of the question?
-    - Faithfulness: Does it only use information from the documents?
-    - Clarity: Is the answer clear and well-expressed?
+    Score the generated answer using the evaluator model.
 
     Args:
         question: The original question
@@ -166,11 +199,9 @@ def score_answer(
     Returns:
         Tuple of (score out of 100, explanation)
     """
-    # Format documents for the scoring context
     context = "\n\n".join(
         [f"[Document {i+1}]\n{doc}" for i, doc in enumerate(documents)])
 
-    # Scoring prompt instructs the evaluator to grade the answer
     system_prompt = """You are an expert evaluator assessing the quality of answers to questions.
 Evaluate the answer on these criteria:
 1. Correctness (0-25 points): Is the answer factually accurate based on the documents?
@@ -184,7 +215,6 @@ Respond with a JSON object containing:
     "reasoning": "<brief explanation of the score>"
 }"""
 
-    # Build the evaluation prompt
     eval_prompt = f"""Documents:
 {context}
 
@@ -196,7 +226,6 @@ Generated Answer:
     if reference_answer:
         eval_prompt += f"\n\nReference Answer (for context):\n{reference_answer}"
 
-    # Call the scoring model
     response = client.chat.completions.create(
         model=SCORING_MODEL,
         messages=[
@@ -207,20 +236,15 @@ Generated Answer:
     )
 
     try:
-        # Parse the JSON response from the scorer
         score_data = json.loads(response.choices[0].message.content or "{}")
         return score_data.get("score", 0), score_data.get("reasoning", "")
     except json.JSONDecodeError:
-        # Fallback if the response isn't valid JSON
         return 0, "Error parsing score response"
 
 
 def evaluate_single_example(example: dict, example_index: int) -> tuple[int, dict]:
     """
-    Evaluate a single example - this function runs in parallel threads.
-
-    This is designed to be called by ThreadPoolExecutor workers.
-    Returns both the index (for ordering results) and the result dict.
+    Evaluate a single example — runs in parallel threads.
 
     Args:
         example: A single dataset example containing question, documents, response
@@ -233,10 +257,11 @@ def evaluate_single_example(example: dict, example_index: int) -> tuple[int, dic
     documents = example["documents"]
     reference_answer = example.get("response", "")
 
-    # Step 1: Generate answer using eval model
-    generated_answer = generate_answer(question, documents, example_index)
+    # Step 1: Generate answer (includes query rewriting internally)
+    generated_answer, rewritten_query = generate_answer(
+        question, documents, example_index)
 
-    # Step 2: Score the answer using scoring model
+    # Step 2: Score the answer
     score, reasoning = score_answer(
         question,
         documents,
@@ -244,9 +269,9 @@ def evaluate_single_example(example: dict, example_index: int) -> tuple[int, dic
         reference_answer
     )
 
-    # Store detailed results
     result = {
         "question": question,
+        "rewritten_query": rewritten_query,
         "generated_answer": generated_answer,
         "reference_answer": reference_answer,
         "score": score,
@@ -260,39 +285,28 @@ def run_evaluation(num_examples: Optional[int] = None, max_workers: int = 8) -> 
     """
     Run the complete evaluation on the dataset using parallel workers.
 
-    This uses ThreadPoolExecutor to run multiple evaluations in parallel.
-    Each worker handles one example at a time (both generation and scoring).
-
     Args:
         num_examples: If specified, only evaluate this many examples.
-                     If None, evaluate the entire dataset.
         max_workers: Number of parallel threads to use (default: 8)
 
     Returns:
         Dictionary with evaluation results and overall score
     """
-    # Determine how many examples to evaluate
     eval_size = num_examples if num_examples else len(ds)
     eval_size = min(eval_size, len(ds))
 
     print(
         f"Running evaluation on {eval_size} examples with {max_workers} parallel workers...\n")
 
-    # Dictionary to store results indexed by example index (for proper ordering)
     results_by_index = {}
     scores = []
-    low_score_examples = []
 
-    # Use ThreadPoolExecutor for parallel API calls
-    # Each worker can make independent API calls while others wait for IO
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # Submit all evaluation tasks
         future_to_idx = {
             executor.submit(evaluate_single_example, ds[i], i): i
             for i in range(eval_size)
         }
 
-        # Process results as they complete (not necessarily in order)
         completed = 0
         for future in as_completed(future_to_idx):
             idx = future_to_idx[future]
@@ -302,46 +316,25 @@ def run_evaluation(num_examples: Optional[int] = None, max_workers: int = 8) -> 
                 scores.append(result["score"])
                 completed += 1
 
-                # Save low-scoring examples for debugging
-                if result["score"] < 10:
-                    low_score_examples.append({
-                        "example_index": example_idx,
-                        "question": result["question"],
-                        "documents": ds[example_idx]["documents"],
-                        "generated_answer": result["generated_answer"],
-                        "reference_answer": result["reference_answer"],
-                        "score": result["score"],
-                        "scoring_reasoning": result["scoring_reasoning"],
-                    })
-
-                # Print progress as tasks complete
+                # Print progress with rewritten query visibility
                 print(
                     f"[{completed}/{eval_size}] Completed example {example_idx + 1}")
-                print(f"  Question: {result['question'][:80]}...")
+                print(f"  Question:  {result['question'][:80]}...")
+                print(f"  Rewritten: {result['rewritten_query'][:80]}...")
                 print(f"  Score: {result['score']}/100")
                 print(f"  Reasoning: {result['scoring_reasoning']}\n")
 
             except Exception as e:
                 print(f"[Error] Example {idx + 1} failed: {e}\n")
 
-    # Save low-scoring examples to file
-    if low_score_examples:
-        low_score_file = "low_score_examples.json"
-        low_score_examples.sort(key=lambda x: x["example_index"])
-        with open(low_score_file, "w") as f:
-            json.dump(low_score_examples, f, indent=2)
-        print(
-            f"Saved {len(low_score_examples)} low-scoring examples (score < 10) to {low_score_file}\n")
-
-    # Reconstruct results in original order
     results = [results_by_index[i]
                for i in range(eval_size) if i in results_by_index]
 
-    # Calculate aggregate metrics
     overall_score = sum(scores) / len(scores) if scores else 0
 
     evaluation_summary = {
         "model_evaluated": EVAL_MODEL,
+        "rewrite_model": REWRITE_MODEL,
         "scoring_model": SCORING_MODEL,
         "num_examples_evaluated": len(scores),
         "overall_score": round(overall_score, 2),
@@ -360,28 +353,52 @@ def run_evaluation(num_examples: Optional[int] = None, max_workers: int = 8) -> 
 
 
 if __name__ == "__main__":
-    # Run evaluation on a small subset first (change to None to eval entire dataset)
+    # ========================================================================
+    # CLI ARGUMENTS
+    # ========================================================================
+    # When run standalone, uses defaults. When called from 1_rag.py, the
+    # orchestrator passes --eval-model, --scoring-model, --rewrite-model,
+    # and --num-examples to allow benchmarking different model combinations.
+    # ========================================================================
+    parser = argparse.ArgumentParser(
+        description="RAG evaluation with query re-wording on HotpotQA")
+    parser.add_argument("--eval-model", default=EVAL_MODEL,
+                        help="Model to evaluate (default: %(default)s)")
+    parser.add_argument("--scoring-model", default=SCORING_MODEL,
+                        help="Model for scoring answers (default: %(default)s)")
+    parser.add_argument("--rewrite-model", default=REWRITE_MODEL,
+                        help="Model for query rewriting (default: %(default)s)")
+    parser.add_argument("--num-examples", type=int, default=100,
+                        help="Number of examples to evaluate (default: %(default)s)")
+    args = parser.parse_args()
+
+    # Override module-level constants with CLI args
+    EVAL_MODEL = args.eval_model
+    SCORING_MODEL = args.scoring_model
+    REWRITE_MODEL = args.rewrite_model
+
     print("=" * 80)
-    print("HOTPOTQA IN-CONTEXT EVALUATION")
+    print("HOTPOTQA RAG EVALUATION WITH QUERY RE-WORDING")
     print("=" * 80 + "\n")
 
-    # Start with 3 examples for testing
-    results = run_evaluation(num_examples=100)
+    results = run_evaluation(num_examples=args.num_examples)
 
-    # Print summary
     print("\n" + "=" * 80)
     print("EVALUATION SUMMARY")
     print("=" * 80)
     print(f"Model evaluated: {results['model_evaluated']}")
-    print(f"Scoring model: {results['scoring_model']}")
+    print(f"Rewrite model:   {results['rewrite_model']}")
+    print(f"Scoring model:   {results['scoring_model']}")
     print(f"Examples evaluated: {results['num_examples_evaluated']}")
     print(f"\nOverall Score: {results['overall_score']}/100")
     print(f"\nScore Distribution:")
     for range_label, count in results['score_distribution'].items():
         print(f"  {range_label}: {count} examples")
 
-    # Save detailed results to file
-    output_file = "evaluation_results.json"
-    with open(output_file, "w") as f:
-        json.dump(results, f, indent=2)
-    print(f"\nDetailed results saved to {output_file}")
+    # Machine-readable result line for orchestrator (1_rag.py)
+    result_json = {
+        "overall_score": results["overall_score"],
+        "num_examples": results["num_examples_evaluated"],
+        "score_distribution": results["score_distribution"],
+    }
+    print(f"RESULT_JSON:{json.dumps(result_json)}")

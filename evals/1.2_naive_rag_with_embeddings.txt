@@ -1,0 +1,12 @@
+Model evaluated: meta-llama/llama-3.1-8b-instruct
+Scoring model: google/gemini-3-flash-preview
+Examples evaluated: 100
+
+Overall Score: 71.73/100
+
+Score Distribution:
+  90-100: 49 examples
+  80-89: 16 examples
+  70-79: 3 examples
+  60-69: 5 examples
+  below-60: 27 examples
