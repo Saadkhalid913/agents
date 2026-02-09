@@ -18,27 +18,27 @@ This produces a comparison table at the end so you can see how the approaches st
 
 The simplest possible RAG pipeline: embed the documents, embed the question, find the top 3 matches, and feed them to the model.
 
-```
+```text
    question + all documents
-              |
-   +----------v-----------+
-   |  Embed all docs into  |     OpenAI
-   |  ChromaDB collection  | <-- text-embedding-3-small
-   +----------+------------+
-              |
-   +----------v-----------+
-   |  Query: find top 3    |
-   |  most similar docs    |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Embed all docs into  │     OpenAI
+   │  ChromaDB collection  │ <── text-embedding-3-small
+   └──────────┬────────────┘
+              │
+   ┌──────────▼───────────┐
+   │  Query: find top 3    │
+   │  most similar docs    │
+   └──────────┬────────────┘
+              │
        top 3 documents
-              |
-   +----------v-----------+
-   |  Eval model           |
-   |  "Answer using these" |
-   +----------+------------+
-              |
-       generated answer --> score it
+              │
+   ┌──────────▼───────────┐
+   │  Eval model           │
+   │  "Answer using these" │
+   └──────────┬────────────┘
+              │
+       generated answer ──> score it
 ```
 
 The crucial difference from 1.1: the model no longer sees all the documents. It sees *only* what the retrieval found. If the embedding search misses a relevant document, the model can't use it.
@@ -58,27 +58,27 @@ Here's an insight that's easy to miss: the question the user asks isn't always t
 
 User questions are conversational. Embedding search works better with keyword-rich, declarative statements. So before searching, we ask an LLM to rewrite the question into a search-optimized query.
 
-```
+```text
    "Who was the director of the 1993 film that featured
     a song by Aerosmith?"
-              |
-   +----------v-----------+
-   |  Rewrite model        |
-   |  (gemini-3-flash)     |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Rewrite model        │
+   │  (gemini-3-flash)     │
+   └──────────┬────────────┘
+              │
    "1993 film director Aerosmith song soundtrack"
-              |
-   +----------v-----------+
-   |  Embed + retrieve     |
-   |  top 3 docs           |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Embed + retrieve     │
+   │  top 3 docs           │
+   └──────────┬────────────┘
+              │
        top 3 documents + ORIGINAL question
-              |
-   +----------v-----------+
-   |  Eval model answers   |
-   +----------------------+
+              │
+   ┌──────────▼───────────┐
+   │  Eval model answers   │
+   └──────────────────────┘
 ```
 
 Notice the subtle but important detail: we search with the *rewritten* query but answer with the *original* question. The rewrite is optimized for retrieval, not for comprehension.
@@ -98,26 +98,26 @@ Everything so far has a problem: the haystack is tiny. Each question in HotpotQA
 
 Real RAG systems search thousands or millions of documents. This notebook uses the BEIR Natural Questions dataset --- 2.68 million Wikipedia passages and 3,452 questions originally from Google Search. We build one shared ChromaDB collection with 10,000+ documents and make every query search the same big corpus.
 
-```
+```text
    BEIR/NQ: 2.68M Wikipedia passages
-              |
-   +----------v-----------+
-   |  Sample 10,000 docs   |     (gold docs + random distractors)
-   |  Build shared index   | <-- embed once, reuse across queries
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Sample 10,000 docs   │     (gold docs + random distractors)
+   │  Build shared index   │ <── embed once, reuse across queries
+   └──────────┬────────────┘
+              │
    for each query:
-   +----------v-----------+
-   |  Search the shared    |
-   |  10K-doc collection   |
-   +----------+------------+
-              |
+   ┌──────────▼───────────┐
+   │  Search the shared    │
+   │  10K-doc collection   │
+   └──────────┬────────────┘
+              │
        top 5 documents
-              |
-   +----------v-----------+
-   |  Generate + score     |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Generate + score     │
+   └──────────┬────────────┘
+              │
    Recall@K + answer score
 ```
 
@@ -133,28 +133,28 @@ This is where you start to see the real challenge. When the haystack grows from 
 
 The approach is identical to 1.4, with one extra step: before searching, we rewrite the question into a search-optimized query. The intuition is the same as 1.3, but now we're testing it where it matters --- at scale, where retrieval is actually hard.
 
-```
+```text
    "Who was the director of the 1993 film
     that featured a song by Aerosmith?"
-              |
-   +----------v-----------+
-   |  Rewrite model        |     gemini-3-flash
-   |  "optimize for        |
-   |   embedding search"   |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Rewrite model        │     gemini-3-flash
+   │  "optimize for        │
+   │   embedding search"   │
+   └──────────┬────────────┘
+              │
    "1993 film director Aerosmith song soundtrack"
-              |
-   +----------v-----------+
-   |  Search 10K-doc       |
-   |  ChromaDB collection  |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Search 10K-doc       │
+   │  ChromaDB collection  │
+   └──────────┬────────────┘
+              │
        top 5 documents + ORIGINAL question
-              |
-   +----------v-----------+
-   |  Generate + score     |
-   +----------------------+
+              │
+   ┌──────────▼───────────┐
+   │  Generate + score     │
+   └──────────────────────┘
 ```
 
 The core rewriting logic:
@@ -186,27 +186,27 @@ Embedding similarity is fast but shallow. It matches on surface-level vector dis
 
 Re-ranking fixes this by adding a second stage: retrieve broadly with embeddings, then have an LLM actually *read* each candidate and score its relevance.
 
-```
+```text
    question
-      |
-   +--v-------------------+
-   |  Stage 1: Embeddings  |     fast, shallow
-   |  Retrieve top 50      |
-   +--+--------------------+
-      |
+      │
+   ┌──▼───────────────────┐
+   │  Stage 1: Embeddings  │     fast, shallow
+   │  Retrieve top 50      │
+   └──┬────────────────────┘
+      │
    50 candidate documents
-      |
-   +--v-------------------+
-   |  Stage 2: LLM         |     slow, precise
-   |  Score each doc 0-10   |
-   |  Keep top 5            |
-   +--+--------------------+
-      |
+      │
+   ┌──▼───────────────────┐
+   │  Stage 2: LLM         │     slow, precise
+   │  Score each doc 0-10   │
+   │  Keep top 5            │
+   └──┬────────────────────┘
+      │
    top 5 re-ranked documents
-      |
-   +--v-------------------+
-   |  Generate + score     |
-   +----------------------+
+      │
+   ┌──▼───────────────────┐
+   │  Generate + score     │
+   └──────────────────────┘
 ```
 
 The key trade-off: INITIAL_K=50 gives you broad coverage (you're unlikely to miss the right document), while RERANK_K=5 gives the answer model a focused, high-quality context. You're spending one LLM call per query to read 50 document snippets, but that's much cheaper than embedding-searching the entire corpus at higher precision.
@@ -259,35 +259,35 @@ Why does this work? Consider the embedding space. A question like "what is the c
 
 The hypothetical answer doesn't need to be correct. It just needs to *sound like* the kind of document that would contain the real answer.
 
-```
+```text
    "What is the capital of France?"
-              |
-   +----------v-----------+
-   |  HyDE model           |     gemini-3-flash
-   |  Generate hypothetical |
-   |  Wikipedia passage     |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  HyDE model           │     gemini-3-flash
+   │  Generate hypothetical │
+   │  Wikipedia passage     │
+   └──────────┬────────────┘
+              │
    "Paris is the capital of France.
     It is located in the
     Ile-de-France region..."
-              |
-   +----------v-----------+
-   |  Embed the HYPOTHETICAL|     OpenAI
-   |  document (not the     |     text-embedding-3-small
-   |  question!)            |
-   +----------+------------+
-              |
-   +----------v-----------+
-   |  Search for similar    |
-   |  REAL documents        |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Embed the HYPOTHETICAL│     OpenAI
+   │  document (not the     │     text-embedding-3-small
+   │  question!)            │
+   └──────────┬────────────┘
+              │
+   ┌──────────▼───────────┐
+   │  Search for similar    │
+   │  REAL documents        │
+   └──────────┬────────────┘
+              │
        top 5 real documents + ORIGINAL question
-              |
-   +----------v-----------+
-   |  Generate + score     |
-   +----------------------+
+              │
+   ┌──────────▼───────────┐
+   │  Generate + score     │
+   └──────────────────────┘
 ```
 
 The implementation has two key functions:
@@ -332,31 +332,31 @@ Every technique so far uses a fixed pipeline: retrieve once, answer once. If the
 
 Agentic RAG adds a feedback loop. After retrieving documents, an LLM evaluates whether they actually contain enough information to answer the question. If not, it reformulates the query and tries again. This is the first technique in our progression where the model makes its own decisions about the retrieval process.
 
-```
+```text
    question
-      |
-      v
-   +--+-------------------+
-   |  Retrieve top 5       |<--------+
-   +--+--------------------+         |
-      |                              |
-   +--v-------------------+         |
-   |  Agent evaluates:     |         |
-   |  "Are these docs      |   reformulated
-   |   sufficient?"        |     query
-   +--+--------+-----------+         |
-      |        |                     |
-     YES      NO                     |
-      |        |                     |
-      |   +----v--------------+     |
-      |   |  Reformulate query |-----+
-      |   |  (different angle, |
-      |   |   new keywords)    |  up to MAX_RETRIES
-      |   +--------------------+
-      |
-   +--v-------------------+
-   |  Generate + score     |
-   +----------------------+
+      │
+      ▼
+   ┌──┴───────────────────┐
+   │  Retrieve top 5       │<────────┐
+   └──┬────────────────────┘         │
+      │                              │
+   ┌──▼───────────────────┐         │
+   │  Agent evaluates:     │         │
+   │  "Are these docs      │   reformulated
+   │   sufficient?"        │     query
+   └──┬────────┬───────────┘         │
+      │        │                     │
+     YES      NO                     │
+      │        │                     │
+      │   ┌────▼──────────────┐     │
+      │   │  Reformulate query │─────┘
+      │   │  (different angle, │
+      │   │   new keywords)    │  up to MAX_RETRIES
+      │   └────────────────────┘
+      │
+   ┌──▼───────────────────┐
+   │  Generate + score     │
+   └──────────────────────┘
 ```
 
 The agent's evaluation step is the key innovation:

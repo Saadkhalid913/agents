@@ -4,8 +4,8 @@
 
 Before you build anything complicated, you should verify the plumbing works. This script sends one message to an LLM and prints the response. If this doesn't work, nothing else will either.
 
-```
-.env (API key) --> 0_hello.py --> OpenAI API --> "Hello, world!"
+```text
+.env (API key) ──> 0_hello.py ──> OpenAI API ──> "Hello, world!"
 ```
 
 That's it. Twenty-eight lines. The interesting stuff starts next.
@@ -18,25 +18,25 @@ You can't just eyeball a few answers. You need a benchmark --- a dataset with kn
 
 The approach is called LLM-as-judge. A stronger model grades a weaker model's answers on four criteria: correctness, completeness, faithfulness, and clarity. Each criterion is worth 25 points, for a total of 0--100.
 
-```
+```text
                     HotpotQA dataset
-                         |
+                         │
             question + all documents
-                         |
-                         v
-    +-----------------------------------------+
-    |  Eval model (kimi-k2.5)                 |
-    |  "Answer this question using these docs"|
-    +-----------------------------------------+
-                         |
+                         │
+                         ▼
+    ┌─────────────────────────────────────────┐
+    │  Eval model (kimi-k2.5)                 │
+    │  "Answer this question using these docs"│
+    └─────────────────────────────────────────┘
+                         │
                    generated answer
-                         |
-                         v
-    +-----------------------------------------+
-    |  Scoring model (gemini-3-flash)         |
-    |  "Grade this answer 0-100"              |
-    +-----------------------------------------+
-                         |
+                         │
+                         ▼
+    ┌─────────────────────────────────────────┐
+    │  Scoring model (gemini-3-flash)         │
+    │  "Grade this answer 0-100"              │
+    └─────────────────────────────────────────┘
+                         │
                    score + reasoning
 ```
 

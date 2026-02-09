@@ -59,13 +59,16 @@ Scripts 1.1-1.3 and notebooks 1.4-1.8 share a common evaluation framework:
 Documentation lives in `docs/` as Markdown files that build into a single PDF.
 
 ```bash
-./docs/build.sh          # Build PDF → docs/output/agents_report.pdf
-./docs/build.sh --clean  # Remove generated PDF
+python docs/build.py          # Build PDF → docs/output/agents_report.pdf
+python docs/build.py --clean  # Remove generated PDF
+./docs/build.sh               # Thin wrapper, calls build.py
 ```
 
-Requires: pandoc, xelatex, Charter/Helvetica/DejaVu Sans Mono fonts.
+Requires: pandoc, xelatex, pygmentize (Pygments), Charter/Helvetica/DejaVu Sans Mono fonts.
 
-Chapters follow the pattern `docs/NN_name.md`. Style is informal (Paul Graham blog style) with ASCII diagrams.
+Build pipeline: `build.py` runs pandoc (with Lua filter) to generate `.tex`, then xelatex (two passes) to produce the PDF. The Lua filter (`docs/filters/formatting.lua`) strips file-path references from headings and wraps code/diagram blocks in tcolorbox environments with minted syntax highlighting.
+
+Chapters follow the pattern `docs/NN_name.md`. Style is informal (Paul Graham blog style) with Unicode box-drawing diagrams. Tag diagram blocks with ` ```text ` so the Lua filter renders them in blue-tinted boxes (vs gray for code).
 
 ## Environment Setup
 

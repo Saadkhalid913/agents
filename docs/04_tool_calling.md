@@ -8,36 +8,36 @@ The key insight: the model never executes anything. It reads a JSON schema descr
 
 Every tool call follows the same five-step lifecycle:
 
-```
+```text
    User message + tool schemas
-              |
-   +----------v-----------+
-   |  LLM reasons about    |
-   |  whether to call a    |
-   |  tool and which one   |
-   +----------+------------+
-              |
-   +----------v-----------+
-   |  Structured output:   |
-   |  { "name": "fn",      |
-   |    "arguments": {...}} |
-   +----------+------------+
-              |
-   +----------v-----------+
-   |  YOUR CODE executes   |
-   |  the function locally |
-   +----------+------------+
-              |
-   +----------v-----------+
-   |  Result injected back |
-   |  into conversation    |
-   +----------+------------+
-              |
-   +----------v-----------+
-   |  LLM generates final  |
-   |  natural-language      |
-   |  response              |
-   +----------------------+
+              │
+   ┌──────────▼───────────┐
+   │  LLM reasons about    │
+   │  whether to call a    │
+   │  tool and which one   │
+   └──────────┬────────────┘
+              │
+   ┌──────────▼───────────┐
+   │  Structured output:   │
+   │  { "name": "fn",      │
+   │    "arguments": {...}} │
+   └──────────┬────────────┘
+              │
+   ┌──────────▼───────────┐
+   │  YOUR CODE executes   │
+   │  the function locally │
+   └──────────┬────────────┘
+              │
+   ┌──────────▼───────────┐
+   │  Result injected back │
+   │  into conversation    │
+   └──────────┬────────────┘
+              │
+   ┌──────────▼───────────┐
+   │  LLM generates final  │
+   │  natural-language      │
+   │  response              │
+   └──────────────────────┘
 ```
 
 A tool is defined as a JSON schema with three parts: a name, a description (which the model reads to decide *when* to call it), and a parameters schema (which tells the model *how* to call it):
@@ -103,7 +103,7 @@ The `tool_call_id` links the result to the specific request. This is important w
 
 Here's the full conversation trace for a single tool call:
 
-```
+```text
 [0] role=user
     content: What's the weather in London?
 
@@ -126,33 +126,33 @@ When the model doesn't need a tool, it skips the whole mechanism and responds wi
 
 When a question requires multiple independent pieces of information, the model can request several tool calls in a single turn:
 
-```
+```text
    "What's the weather in Tokyo,
     AAPL's stock price,
     and the latest AI news?"
-              |
-   +----------v-----------+
-   |  Model returns 3      |
-   |  tool_calls at once   |
-   +----------+------------+
-              |
-   +---+------+------+----+
-   |   |             |    |
-   v   v             v    |
-  get  get_stock  get_news|
+              │
+   ┌──────────▼───────────┐
+   │  Model returns 3      │
+   │  tool_calls at once   │
+   └──────────┬────────────┘
+              │
+   ┌───┬──────┴──────┬────┐
+   │   │             │    │
+   ▼   ▼             ▼    │
+  get  get_stock  get_news│
   weather  price  headlines
-   |   |             |    |
-   +---+------+------+----+
-              |
-   +----------v-----------+
-   |  All 3 results sent   |
-   |  back together        |
-   +----------+------------+
-              |
-   +----------v-----------+
-   |  Final answer using   |
-   |  all three results    |
-   +----------------------+
+   │   │             │    │
+   └───┴──────┬──────┴────┘
+              │
+   ┌──────────▼───────────┐
+   │  All 3 results sent   │
+   │  back together        │
+   └──────────┬────────────┘
+              │
+   ┌──────────▼───────────┐
+   │  Final answer using   │
+   │  all three results    │
+   └──────────────────────┘
 ```
 
 The model identifies which parts of the question are independent and batches them. You execute all calls concurrently:
@@ -174,7 +174,7 @@ def execute_tool_calls_parallel(tool_calls):
 
 The speedup is significant. With three tools that each take 300ms:
 
-```
+```text
 3 tools (each 300ms):
   Parallel:   0.305s
   Sequential: 0.916s
@@ -189,30 +189,30 @@ Not all tool calls are independent. Sometimes the output of one feeds into the n
 
 This is multi-turn tool use. The conversation grows with each round-trip:
 
-```
+```text
    "How much has Carol Davis spent?"
-              |
-   +----------v-----------+
-   |  Round 1: search for  |
-   |  "Carol Davis"         |
-   +----------+------------+
-              |
+              │
+   ┌──────────▼───────────┐
+   │  Round 1: search for  │
+   │  "Carol Davis"         │
+   └──────────┬────────────┘
+              │
    search_users("Carol Davis")
-   --> {"user_id": "u_103"}
-              |
-   +----------v-----------+
-   |  Round 2: get orders  |
-   |  for user u_103        |
-   +----------+------------+
-              |
+   ──> {"user_id": "u_103"}
+              │
+   ┌──────────▼───────────┐
+   │  Round 2: get orders  │
+   │  for user u_103        │
+   └──────────┬────────────┘
+              │
    get_user_orders("u_103")
-   --> {"total_spent": 174.97}
-              |
-   +----------v-----------+
-   |  Round 3: final answer|
-   |  "Carol has spent      |
-   |   $174.97 on orders"  |
-   +----------------------+
+   ──> {"total_spent": 174.97}
+              │
+   ┌──────────▼───────────┐
+   │  Round 3: final answer│
+   │  "Carol has spent      │
+   │   $174.97 on orders"  │
+   └──────────────────────┘
 ```
 
 The implementation is a loop that keeps calling the API until the model stops requesting tools:
@@ -249,13 +249,13 @@ def run_chained(user_message, max_rounds=5):
 
 The interesting thing is that chaining and parallelism compose. When the model needs both a profile and order history after a search, it calls both in the same round:
 
-```
+```text
 Round 1: search_users("Bob Smith")
-  --> {"user_id": "u_102"}
+  ──> {"user_id": "u_102"}
 
 Round 2: get_user_profile("u_102")     [parallel]
          get_user_orders("u_102")      [parallel]
-  --> profile + orders
+  ──> profile + orders
 
 Round 3: "Bob Smith has the Basic plan. His total
           spending is $129.99..."
@@ -267,7 +267,7 @@ Search is sequential (can't call profile without the user ID), but profile and o
 
 Each round adds messages. A three-round chained query produces 8 messages:
 
-```
+```text
 [0] system:    "You are a helpful assistant..."
 [1] user:      "What plan is Alice on and what are her orders?"
 [2] assistant: tool_calls: [search_users]

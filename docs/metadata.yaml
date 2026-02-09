@@ -12,6 +12,7 @@ classoption:
 mainfont: "Charter"
 sansfont: "Helvetica"
 monofont: "DejaVu Sans Mono"
+monofontoptions: Scale=0.85
 
 # Page geometry
 geometry:
@@ -22,18 +23,15 @@ geometry:
 
 # Table of contents
 toc: true
-toc-depth: 3
-
-# Code highlighting
-highlight-style: tango
+toc-depth: 2
 
 # Links
 colorlinks: true
-linkcolor: "blue"
-urlcolor: "blue"
-citecolor: "blue"
+linkcolor: "NavyBlue"
+urlcolor: "NavyBlue"
+citecolor: "NavyBlue"
 
-# Headers and footers via fancyhdr
+# Headers, footers, and code formatting
 header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
@@ -43,4 +41,11 @@ header-includes: |
   \fancyfoot[C]{\small AI Agents: From First Principles}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0.2pt}
+  \usepackage{xcolor}
+  \usepackage{needspace}
+  \usepackage[most,minted,breakable]{tcolorbox}
+  \usepackage{minted}
+  \setminted{fontsize=\small, breaklines=true, breaksymbolleft={}}
+  \newtcolorbox{codebox}{colback={rgb,255:red,247;green,247;blue,248}, colframe={rgb,255:red,208;green,208;blue,208}, boxrule=0.5pt, arc=2pt, left=4pt, right=4pt, top=4pt, bottom=4pt, enhanced}
+  \newtcolorbox{diagrambox}{colback={rgb,255:red,240;green,244;blue,248}, colframe={rgb,255:red,176;green,196;blue,216}, boxrule=0.5pt, arc=2pt, left=4pt, right=4pt, top=4pt, bottom=4pt, enhanced}
 ---

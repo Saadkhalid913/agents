@@ -22,7 +22,7 @@ Then run any script directly: `python 0_hello.py`.
 
 ## The files
 
-```
+```text
 0_hello.py                                API connectivity test
 1_rag/
   1_rag.py                                Benchmark orchestrator (runs 1.1-1.3)
