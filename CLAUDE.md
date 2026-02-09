@@ -4,11 +4,12 @@ A learning project for exploring AI agent paradigms through self-contained Pytho
 
 ## File Naming
 
-Agent files follow the pattern `N_descriptive_name.py` where N is a sequential integer (0, 1, 2, ...). Sub-scripts within a group use dotted prefixes (e.g., `1.1_`, `1.2_`).
+Each section lives in its own folder: `N_name/`. Individual files within a section use dotted prefixes (e.g., `1.1_`, `1.2_`).
 
-Current files:
+Current structure:
 - `0_hello.py` — API connectivity test (OpenAI direct)
-- `1_rag.py` — Interactive TUI orchestrator (questionary-based)
+- `1_rag/` — RAG benchmark suite
+  - `1_rag.py` — Interactive TUI orchestrator (questionary-based)
   - `1.1_in_context_qa.py` — In-context evaluation with LLM-as-judge
   - `1.2_naive_rag_with_embeddings.py` — Naive RAG with ChromaDB embeddings
   - `1.3_rag_with_query_rewording.py` — RAG with LLM-based query rewriting
@@ -17,9 +18,13 @@ Current files:
   - `1.6_reranking.ipynb` — Two-stage retrieval: broad embed search + LLM re-ranking
   - `1.7_hyde.ipynb` — HyDE: hypothetical document embeddings
   - `1.8_agentic_rag.ipynb` — Agentic RAG: retrieve-evaluate-reformulate loop
-- `models.txt` — Available model IDs (one per line), used by `1_rag.py`
+  - `models.txt` — Available model IDs (one per line), used by `1_rag.py`
+- `2_tool_calls/` — Tool calling
+  - `2.1_single_tool_call.ipynb` — Single tool call lifecycle (JSON schema, execution, result injection)
+  - `2.2_parallel_tool_calls.ipynb` — Parallel tool calls with concurrent execution
+  - `2.3_chained_tool_calls.ipynb` — Multi-turn chained tool calls (sequential + parallel)
 
-Scripts 1.1-1.3 accept CLI args (`--eval-model`, `--scoring-model`, `--num-examples`). Notebooks 1.4-1.8 use inline configuration cells. The orchestrator (`1_rag.py`) is interactive -- run it with `python 1_rag.py` and follow the prompts. Results are saved to `benchmark_results.json`.
+Scripts 1.1-1.3 accept CLI args (`--eval-model`, `--scoring-model`, `--num-examples`). Notebooks 1.4-1.8 use inline configuration cells. The orchestrator is interactive -- run it with `python 1_rag/1_rag.py` and follow the prompts. Results are saved to `benchmark_results.json`.
 
 ## Code Style
 

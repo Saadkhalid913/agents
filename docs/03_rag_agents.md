@@ -4,17 +4,17 @@ The interesting question isn't whether LLMs can answer questions from documents.
 
 That's retrieval-augmented generation: embed documents into vectors, search for the ones that match the question, then feed only those to the model. The rest of this chapter is about what happens when you try it, what breaks, and how to fix it.
 
-## The Orchestrator (`1_rag.py`)
+## The Orchestrator (`1_rag/1_rag.py`)
 
 Before diving into individual scripts, it's worth mentioning the benchmark runner. It takes model parameters once and runs all the RAG approaches back-to-back:
 
 ```bash
-python 1_rag.py --eval-model openai/gpt-4o --num-examples 20
+python 1_rag/1_rag.py --eval-model openai/gpt-4o --num-examples 20
 ```
 
 This produces a comparison table at the end so you can see how the approaches stack up against each other with identical settings.
 
-## Naive RAG (`1.2_naive_rag_with_embeddings.py`)
+## Naive RAG (`1_rag/1.2_naive_rag_with_embeddings.py`)
 
 The simplest possible RAG pipeline: embed the documents, embed the question, find the top 3 matches, and feed them to the model.
 
@@ -48,11 +48,11 @@ Each question gets its own ephemeral ChromaDB collection with only its ~10 docum
 Run it:
 
 ```bash
-python 1.2_naive_rag_with_embeddings.py
-python 1.2_naive_rag_with_embeddings.py --eval-model openai/gpt-4o
+python 1_rag/1.2_naive_rag_with_embeddings.py
+python 1_rag/1.2_naive_rag_with_embeddings.py --eval-model openai/gpt-4o
 ```
 
-## Query Rewriting (`1.3_rag_with_query_rewording.py`)
+## Query Rewriting (`1_rag/1.3_rag_with_query_rewording.py`)
 
 Here's an insight that's easy to miss: the question the user asks isn't always the best query for embedding search.
 
@@ -88,11 +88,11 @@ Everything else is identical to 1.2. Same scoring, same dataset, same parallelis
 Run it:
 
 ```bash
-python 1.3_rag_with_query_rewording.py
-python 1.3_rag_with_query_rewording.py --rewrite-model openai/gpt-4o-mini
+python 1_rag/1.3_rag_with_query_rewording.py
+python 1_rag/1.3_rag_with_query_rewording.py --rewrite-model openai/gpt-4o-mini
 ```
 
-## Scaling Up (`1.4_large_corpus_rag.ipynb`)
+## Scaling Up (`1_rag/1.4_large_corpus_rag.ipynb`)
 
 Everything so far has a problem: the haystack is tiny. Each question in HotpotQA comes with about 10 documents. Finding the right one out of 10 isn't much of a test.
 
@@ -127,7 +127,7 @@ We also introduce a new metric: **Recall@K**. For each query, the BEIR dataset t
 
 This is where you start to see the real challenge. When the haystack grows from 10 to 10,000 documents, retrieval quality drops and it drags answer quality down with it.
 
-## Query Rewriting at Scale (`1.5_large_corpus_rag_with_query_rewriting.ipynb`)
+## Query Rewriting at Scale (`1_rag/1.5_large_corpus_rag_with_query_rewriting.ipynb`)
 
 1.3 showed that query rewriting helps on small datasets. 1.5 tests whether the same trick works when the haystack is 10,000 documents instead of 10.
 
@@ -180,7 +180,7 @@ def rewrite_query(question: str) -> str:
 
 The subtle detail: we search with the *rewritten* query but answer with the *original* question. The rewrite is optimized for retrieval, not comprehension.
 
-## Re-ranking (`1.6_reranking.ipynb`)
+## Re-ranking (`1_rag/1.6_reranking.ipynb`)
 
 Embedding similarity is fast but shallow. It matches on surface-level vector distance, which means a document about "apple pie recipes" might rank higher than one about "Apple Inc. revenue" for a query about Apple's stock price, just because the word "apple" is prominent.
 
@@ -251,7 +251,7 @@ def rerank_documents(question, doc_ids, doc_texts, top_k):
 
 The evaluation tracks both `recall_before_rerank` (what embedding search found in the top 5) and `recall_at_k` (what's left after re-ranking). This tells you whether the LLM is helping or hurting --- it's possible for re-ranking to *drop* a relevant document if the model misjudges its relevance.
 
-## HyDE --- Hypothetical Document Embeddings (`1.7_hyde.ipynb`)
+## HyDE --- Hypothetical Document Embeddings (`1_rag/1.7_hyde.ipynb`)
 
 HyDE flips the retrieval problem. Instead of embedding the question and searching for similar documents, you generate a *hypothetical answer* and search for documents similar to *that*.
 
@@ -326,7 +326,7 @@ def hyde_retrieve(question, collection, top_k):
 
 Notice HyDE requires a direct OpenAI client for embedding (not through ChromaDB), since we're embedding arbitrary text rather than using ChromaDB's built-in query.
 
-## Agentic RAG (`1.8_agentic_rag.ipynb`)
+## Agentic RAG (`1_rag/1.8_agentic_rag.ipynb`)
 
 Every technique so far uses a fixed pipeline: retrieve once, answer once. If the retrieval misses, you're stuck.
 

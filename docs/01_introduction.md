@@ -23,10 +23,19 @@ Then run any script directly: `python 0_hello.py`.
 ## The files
 
 ```
-0_hello.py                       API connectivity test
-1_rag.py                         Benchmark orchestrator (runs 1.1-1.3)
-1.1_in_context_qa.py             In-context evaluation
-1.2_naive_rag_with_embeddings.py Naive RAG with embeddings
-1.3_rag_with_query_rewording.py  RAG with query rewriting
-1.4_large_corpus_rag.py          RAG at scale (10K+ docs)
+0_hello.py                                API connectivity test
+1_rag/
+  1_rag.py                                Benchmark orchestrator (runs 1.1-1.3)
+  1.1_in_context_qa.py                    In-context evaluation
+  1.2_naive_rag_with_embeddings.py        Naive RAG with embeddings
+  1.3_rag_with_query_rewording.py         RAG with query rewriting
+  1.4_large_corpus_rag.ipynb              RAG at scale (10K+ docs)
+  1.5_...query_rewriting.ipynb            Query rewriting at scale
+  1.6_reranking.ipynb                     Two-stage retrieval with re-ranking
+  1.7_hyde.ipynb                          Hypothetical document embeddings
+  1.8_agentic_rag.ipynb                   Agentic RAG with feedback loop
+2_tool_calls/
+  2.1_single_tool_call.ipynb              Tool call lifecycle
+  2.2_parallel_tool_calls.ipynb           Parallel tool execution
+  2.3_chained_tool_calls.ipynb            Multi-turn chained tool calls
 ```

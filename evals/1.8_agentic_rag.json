@@ -1,0 +1,849 @@
+{
+  "model_evaluated": "moonshotai/kimi-k2.5",
+  "scoring_model": "google/gemini-3-flash-preview",
+  "agent_model": "google/gemini-3-flash-preview",
+  "dataset": "BeIR/NQ",
+  "corpus_size": 10000,
+  "top_k": 5,
+  "max_retries": 3,
+  "num_examples_evaluated": 50,
+  "overall_score": 93.7,
+  "avg_recall_at_k": 0.98,
+  "avg_retrieval_attempts": 1.46,
+  "individual_scores": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    0,
+    0,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    0,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    85,
+    100,
+    100
+  ],
+  "individual_recalls": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "score_distribution": {
+    "90-100": 46,
+    "80-89": 1,
+    "70-79": 0,
+    "60-69": 0,
+    "below-60": 3
+  },
+  "detailed_results": [
+    {
+      "query_id": "test0",
+      "question": "what is non controlling interest on balance sheet",
+      "queries_tried": [
+        "what is non controlling interest on balance sheet"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": " Based on the provided documents, non-controlling interest (also called minority interest) on the balance sheet is:\n\nThe portion of a subsidiary corporation's stock that is **not owned by the parent corporation**, representing the equity stake held by other investors. It is reported on the **consolidated balance sheet** of the owning (parent) company to reflect the claim on assets belonging to other, non-controlling shareholders.\n\nKey characteristics from the documents:\n- Generally represents less than 50% of the subsidiary's outstanding shares (otherwise the entity would cease to be a subsidiary)\n- Belongs to other investors outside the parent corporation\n- Also reported on the consolidated income statement as a share of profit belonging to minority shareholders",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and completely based on the provided documents. It correctly identifies non-controlling interest as minority interest, explains its representation on the balance sheet, and includes relevant details regarding ownership percentages and reporting on income statements as found in Documents 1 and 2.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test1",
+      "question": "how many episodes are in chicago fire season 4",
+      "queries_tried": [
+        "how many episodes are in chicago fire season 4",
+        "number of episodes in Chicago Fire season 4 list",
+        "Chicago Fire season 4 episode list count"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Based on Document 1, Chicago Fire season 4 contained **23 episodes**.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test2",
+      "question": "who sings love will keep us alive by the eagles",
+      "queries_tried": [
+        "who sings love will keep us alive by the eagles"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": " Based on the provided documents, **Timothy B. Schmit** sings lead vocals on \"Love Will Keep Us Alive\" by the Eagles. According to Document 1, the song was first performed by the Eagles in 1994 during their \"Hell Freezes Over\" reunion tour, with lead vocals by bassist Timothy B. Schmit.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct according to Document 1. It identifies Timothy B. Schmit as the lead vocalist, specifies his role as the bassist, and mentions the context (the 1994 'Hell Freezes Over' tour) as described in the text. The answer is clear, faithful, and complete.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test3",
+      "question": "who is the leader of the ontario pc party",
+      "queries_tried": [
+        "who is the leader of the ontario pc party",
+        "current leader of the Progressive Conservative Party of Ontario 2024"
+      ],
+      "retrieval_attempts": 2,
+      "generated_answer": " Based on the provided documents, **Patrick Brown** (Patrick Walter Brown) is the leader of the Ontario PC Party (Progressive Conservative Party of Ontario).\n\nDocument 1 explicitly states that he \"is the leader of the Progressive Conservative Party of Ontario,\" and Document 3 confirms that \"Brown was elected leader of the Ontario PC Party\" in May 2015.",
+      "score": 100,
+      "scoring_reasoning": "The answer is entirely correct, complete, and faithful to the provided documents. Documents 1 and 3 explicitly state that Patrick Brown is/was elected the leader of the Ontario PC Party. The answer is also clear and well-organized.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test4",
+      "question": "nitty gritty dirt band fishin in the dark album",
+      "queries_tried": [
+        "nitty gritty dirt band fishin in the dark album"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents provided, \"Fishin' in the Dark\" by the Nitty Gritty Dirt Band is from the album **Hold On**. It was released in June 1987 as the second single from that album.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct, complete, and faithful to the provided documents. It correctly identifies the album 'Hold On' from Document 1 and includes relevant context about the release date and single status.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test5",
+      "question": "who were the three elves who got rings",
+      "queries_tried": [
+        "who were the three elves who got rings"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents provided, the three Elves who received the Three Rings were:\n\n1. **Gil-galad** - received Vilya (and according to one account, temporarily held Narya as well)\n2. **C\u00edrdan** - received Narya (either from the beginning or from Gil-galad)\n3. **Galadriel** - received Nenya from the start\n\nAccording to Document 2, Celebrimbor gave these three rings to these individuals at the start of the War of the Elves and Sauron.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and completely based on Document 2. It correctly identifies the three elves (Gil-galad, C\u00edrdan, and Galadriel) and notes the different accounts regarding how they received the rings (Vilya, Narya, and Nenya) as described in the text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test6",
+      "question": "converting stereo signal to mono signal is called",
+      "queries_tried": [
+        "converting stereo signal to mono signal is called"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, converting a stereo signal to a mono signal is called creating a **dual mono signal**.\n\nAccording to Document 1, this is achieved by panning the left and right channels of a stereo source \"straight up\" (sending them equally to both the left and right outputs of the mixer), which creates a dual mono signal.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and directly supported by Document 1. It correctly identifies the term 'dual mono signal' and explains the process as described in the text. The answer remains faithful to the provided documents without introducing outside information.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test7",
+      "question": "in order to prove disparate impact you first must establish",
+      "queries_tried": [
+        "in order to prove disparate impact you first must establish"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, in order to prove disparate impact you first must establish that **an employment practice or policy has a disproportionately adverse effect on members of the protected class as compared with non-members of the protected class**.\n\nAs stated in Document 1, \"A violation of Title VII of the 1964 Civil Rights Act may be proven by showing that an employment practice or policy has a disproportionately adverse effect on members of the protected class as compared with non-members of the protected class.\"",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct and directly addresses the question using the provided documents. It accurately quotes the specific requirement for proving disparate impact as described in Document 1.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test8",
+      "question": "where do characters live in this is us",
+      "queries_tried": [
+        "where do characters live in this is us",
+        "setting and character home locations in the television show This Is Us",
+        "primary setting and character locations in the TV show This Is Us"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Based on the documents provided, the characters in *This Is Us* live in the following locations:\n\n**As adults:**\n- **Kate** lives in Los Angeles\n- **Randall** and his family are in New Jersey\n- **Kevin** relocates from Los Angeles to New York City\n\n**In the past/flashbacks:**\n- The family (the \"Big Three\") were born and raised in **Pittsburgh**, where most of the childhood and adolescent flashback scenes take place.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate based on Document 1. it correctly identifies the locations of the adult characters (Kate, Randall, and Kevin) and the location of the family during flashback sequences (Pittsburgh). It is faithful to the text and clearly organized.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test9",
+      "question": "who makes the decisions about what to produce in a market economy",
+      "queries_tried": [
+        "who makes the decisions about what to produce in a market economy"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents provided, in a market economy, decisions regarding what to produce (investment, production, and distribution) are based on the **interplay of supply and demand**. Specifically, investment decisions and the allocation of producer goods are **primarily made through capital and financial markets** (Document 1).",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test10",
+      "question": "when is the new tappan zee bridge going to be finished",
+      "queries_tried": [
+        "when is the new tappan zee bridge going to be finished"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on Document 1, both spans of the new Tappan Zee Bridge are expected to be operational by **June 15, 2018**.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly accurate based on the provided documents. Document 1 explicitly states that both spans of the bridge are expected to be operational by June 15, 2018. The answer is clear, faithful to the text, and complete.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test11",
+      "question": "who recorded i can't help falling in love with you",
+      "queries_tried": [
+        "who recorded i can't help falling in love with you"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, **Elvis Presley** originally recorded \"Can't Help Falling in Love\" (also known as \"I Can't Help Falling in Love with You\"). \n\nThe song was later recorded by numerous other artists, including:\n- **Tom Smothers**\n- **A-Teens** (Swedish pop group)\n- **UB40** (British reggae group, whose 1993 version topped the U.S. and UK charts)",
+      "score": 100,
+      "scoring_reasoning": "The answer is entirely accurate based on Document 1. It correctly identifies Elvis Presley as the original artist and lists the other artists mentioned in the text (Tom Smothers, A-Teens, and UB40). It is clear, complete, and does not include outside information or hallucinations.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test12",
+      "question": "who plays the doc in back to the future",
+      "queries_tried": [
+        "who plays the doc in back to the future"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, **Christopher Lloyd** plays Doc (Emmett \"Doc\" Brown) in the Back to the Future trilogy.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the provided documents, and directly answers the question. Document 1 and Document 2 both confirm that Christopher Lloyd portrays the character.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test13",
+      "question": "when did they stop cigarette advertising on television",
+      "queries_tried": [
+        "when did they stop cigarette advertising on television",
+        "Public Health Cigarette Smoking Act television advertising ban date",
+        "date of cigarette advertising ban on television US UK global"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Based on the documents, cigarette advertising on television was banned starting on **January 2, 1971**, following the passage of the Public Health Cigarette Smoking Act in 1970.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the provided documents (specifically Document 1), and answers the question clearly and concisely.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test14",
+      "question": "who has been chosen as the brand ambassador of the campaign 'beti bachao-beti padhao",
+      "queries_tried": [
+        "who has been chosen as the brand ambassador of the campaign 'beti bachao-beti padhao"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, **Sakshi Malik** was chosen as the brand ambassador for the Beti Bachao Beti Padhao (BBBP) campaign. According to Document 1, the Olympics 2016 bronze medallist was made brand ambassador for BBBP on 26 August 2016.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and directly supported by Document 1. It correctly identifies Sakshi Malik as the brand ambassador for BBBP and provides the specific date mentioned in the text. The answer is clear and strictly follows the provided information.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test15",
+      "question": "how many seasons of prison break are on netflix",
+      "queries_tried": [
+        "how many seasons of prison break are on netflix",
+        "is Prison Break currently streaming on Netflix and which seasons are available",
+        "is prison break currently streaming on netflix and how many seasons are available"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "The provided documents do not specify how many seasons of *Prison Break* are available on Netflix. \n\nDocument 1 states that the show is available on Netflix (along with iTunes and Amazon Video) and mentions that the first five seasons were released on DVD, but it does not explicitly state how many seasons are streaming on Netflix.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct and faithful to the provided documents. Document 1 confirms that Prison Break is available on Netflix but does not specify the number of seasons hosted on that platform. The answer correctly distinguishes between the DVD releases (five seasons) and the streaming availability.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test16",
+      "question": "what was the name of atom bomb dropped by usa on hiroshima",
+      "queries_tried": [
+        "what was the name of atom bomb dropped by usa on hiroshima",
+        "name of the atomic bomb used in the Hiroshima bombing August 1945",
+        "name of the first atomic bomb dropped on Hiroshima August 1945"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Based on the provided documents, the atomic bomb dropped by the USA on Hiroshima was named **Little Boy**.\n\nAccording to Document 1: \"On August 6, one of its B-29s dropped a **Little Boy** uranium gun-type bomb on Hiroshima.\"",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct, complete, and faithful to the documents. It correctly identifies the bomb name 'Little Boy' from Document 1 and provides a clear citation.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test17",
+      "question": "when did the us take over wake island",
+      "queries_tried": [
+        "when did the us take over wake island"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, the United States took over Wake Island on two significant dates:\n\n1. **July 4, 1898**: United States Army Brigadier General Francis V. Greene stopped at Wake Island and raised the American flag while en route to the Philippines.\n\n2. **January 17, 1899**: Under orders from President William McKinley, Commander Edward D. Taussig of the USS *Bennington* landed on Wake Island and formally took possession of the island for the United States.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and fully addresses the question using only the provided documents. It correctly identifies the preliminary flag-raising in 1898 and the formal possession in 1899, citing the specific dates and individuals involved as described in Documents 1 and 2.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test18",
+      "question": "when did american two party system began to emerge",
+      "queries_tried": [
+        "when did american two party system began to emerge"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on Document 1, the American two-party system began to emerge during the **First Party System**, when the **Federalist Party** (Alexander Hamilton) and the **Democratic-Republican Party** (Thomas Jefferson) were the two significant political parties.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and directly supported by Document 1, which states that in the First Party System, only Hamilton's Federalist Party and Jefferson's Democratic-Republican Party were significant, marking the origin of the two-party system described in the text. The answer is clear, faithful to the text, and complete.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test19",
+      "question": "where are the mitochondria located in the sperm",
+      "queries_tried": [
+        "where are the mitochondria located in the sperm"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, the mitochondria are located in the **midpiece** of the sperm.\n\nSpecifically:\n- Document 1 states that the midpiece has \"many mitochondria spiralled around\" the central filamentous core.\n- Document 2 confirms that mitochondria are located \"in the sperm's midpiece (at the base of the sperm head).\"",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely correct, faithful to the provided documents, and clear. It accurately identifies the midpiece as the location of the mitochondria, citing both Document 1 and Document 2 as evidence.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test20",
+      "question": "how many lines of symmetry are there in a equilateral triangle",
+      "queries_tried": [
+        "how many lines of symmetry are there in a equilateral triangle"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on Document 1, an equilateral triangle has **3 lines of symmetry** (also referred to as 3 lines of reflection).",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly accurate, complete, and faithful to Document 1. It directly answers the question using only the provided information and is presented clearly.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test21",
+      "question": "how many seasons of the oc are there",
+      "queries_tried": [
+        "how many seasons of the oc are there"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, there are **four seasons** of The O.C.\n\nDocument 1 explicitly states: \"The **fourth and final season** of The O.C., an American teen drama television series, aired in the United States from November 2, 2006 to February 22, 2007 and consisted of sixteen episodes.\"",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and clear. Document 1 explicitly states that the fourth season was the 'fourth and final season' of The O.C., confirming there are four seasons in total.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test22",
+      "question": "latest season on keeping up with the kardashians",
+      "queries_tried": [
+        "latest season on keeping up with the kardashians"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, the latest season of *Keeping Up with the Kardashians* mentioned is **season fourteen**.\n\nAccording to Document 1, as of December 10, 2017, 205 original episodes had aired, concluding the fourteen seasons.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and completely based on the provided documents. Document 1 explicitly mentions that 14 seasons have concluded as of December 10, 2017, making it the latest season mentioned in the text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test23",
+      "question": "how dose the poet present death as a voyage in crossing the bar",
+      "queries_tried": [
+        "how dose the poet present death as a voyage in crossing the bar"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on Document 1, the poet presents death as a voyage through the extended metaphor of \"crossing the bar,\" which represents traveling serenely and securely from life through death. \n\nThe voyage imagery includes:\n- **The \"bar\"** itself, suggesting a sandbar or shallow area that must be crossed to reach open water (representing the transition from life to death)\n- **The Pilot**, who serves as a metaphor for God guiding the vessel. As Tennyson explained, \"The Pilot has been on board all the while\" and is \"that Divine and Unseen Who is always guiding us\"\n\nThe presentation emphasizes a peaceful, guided journey rather than a frightening end\u2014the speaker hopes to meet the Pilot (God) face to face after crossing from life into death.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the provided documents (specifically Document 1). it correctly identifies the metaphor of the 'bar' as the transition reached via travel and explains the role of the 'Pilot' as the divine guide. The answer is clear and fully addresses the question.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test24",
+      "question": "who were farmers who kept a small portion of their crops & gave the rest to the landowners",
+      "queries_tried": [
+        "who were farmers who kept a small portion of their crops & gave the rest to the landowners"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents provided, these farmers are called **sharecroppers** (or tenants engaged in **sharecropping**).\n\nAccording to Document 2: \"Sharecropping is a form of agriculture in which a landowner allows a tenant to use the land in return for a share of the crops produced on their portion of land.\"\n\nThe document also notes that specific legal contract systems for this arrangement include the Italian *mezzadria*, French *m\u00e9tayage*, Spanish *mediero*, and Islamic *muqasat*.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. Document 2 specifically defines sharecropping as a system where a tenant uses land in exchange for a share of the crops produced. The answer also correctly identifies the specific cultural terms mentioned in the text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test25",
+      "question": "what is pumped up kicks the song about",
+      "queries_tried": [
+        "what is pumped up kicks the song about"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, \"Pumped Up Kicks\" is about:\n\n**The perspective of a troubled, delusional youth with homicidal thoughts.** The lyrics describe the narrator's violent fantasies, warning potential victims to \"outrun my gun\" and \"better run, better run, faster than my bullet.\"\n\n**Teenage mental illness and gun violence awareness.** Songwriter Mark Foster wrote it after reading about the growing trend in teenage mental illness, wanting to \"get inside the head of an isolated, psychotic kid\" and bring awareness to gun violence among youth, which he attributes to \"lack of family, lack of love, and isolation.\"\n\n**Status symbols.** The title \"Pumped Up Kicks\" refers to shoes that the narrator's peers wear as a status symbol.",
+      "score": 100,
+      "scoring_reasoning": "The answer is excellent. It accurately identifies the theme and lyrical content of the song using only the provided documents. It correctly explains the songwriter's intent regarding mental health and gun violence awareness, and it correctly identifies the meaning of the song's title. The information is well-organized and clearly written.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test26",
+      "question": "2. what are the reasons states impose protectionists policies on other countries",
+      "queries_tried": [
+        "2. what are the reasons states impose protectionists policies on other countries"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, states impose protectionist policies on other countries for the following reasons:\n\n**Economic Protection and Mercantilism**\n- To shield domestic producers, businesses, and workers from foreign competitors (Document 1).\n- To increase exports and favor domestic industries over imports, as seen in French mercantilism (Colbertism), where the government limited imports and organized industries into guilds and monopolies to boost exports (Document 2).\n\n**Addressing Unfair Trade Practices**\n- To prevent unfair trade practices and theft of intellectual property. The U.S., for example, uses Section 301 of the Trade Act of 1974 to impose penalties when trading partners are deemed to be unfairly harming business interests through intellectual property theft (Document 3).\n\n**Political and Security Concerns**\n- To prevent foreign invasion or political interference. The Tokugawa shogunate restricted trade with Western powers fearing that commerce and the spread of Christianity would serve as a pretext for imperialist invasion (Document 4).\n- To maintain internal political stability and prevent regime change. The Tokugawa also feared that foreign trade wealth would enable rival daimy\u014d to become powerful enough to overthrow the ruling clan (Document 4).",
+      "score": 100,
+      "scoring_reasoning": "The answer is excellent. it accurately identifies and categorizes the reasons for protectionist policies mentioned across the provided documents, including economic shielding (Doc 1), mercantilism/export boosting (Doc 2), addressing intellectual property theft (Doc 3), and national security/political stability (Doc 4). It is faithful to the text and clearly organized.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test27",
+      "question": "where are they building the new raiders stadium",
+      "queries_tried": [
+        "where are they building the new raiders stadium"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, the new Raiders stadium (working name: Las Vegas Stadium) is being built in **Paradise, Nevada**.\n\nSpecifically, it is located on about 62 acres **west of Mandalay Bay at Russell Road and Hacienda Avenue**, between Polaris Avenue and Dean Martin Drive, just west of Interstate 15.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the provided documents. It correctly identifies the location (Paradise, Nevada) and includes the specific street boundaries and landmarks mentioned in Document 1.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test28",
+      "question": "what event provoked congress to propose the eleventh amendment and the states to ratify it",
+      "queries_tried": [
+        "what event provoked congress to propose the eleventh amendment and the states to ratify it"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, the event that provoked Congress to propose the Eleventh Amendment and the states to ratify it was the **U.S. Supreme Court's decision in *Chisholm v. Georgia*, 2 U.S. 419 (1793)**.\n\nIn *Chisholm*, the Court ruled that federal courts had the authority to hear cases brought by private citizens against states and that states did not enjoy sovereign immunity from suits made by citizens of other states in federal court. The Eleventh Amendment was adopted specifically to overrule this decision and clarify that states have sovereign immunity from such lawsuits.",
+      "score": 100,
+      "scoring_reasoning": "The answer is excellent. it accurately identifies the specific court case and the legal implications of that case as described in Documents 1 and 2. It correctly follows all instructions, using only the provided information to answer the question clearly and completely.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test29",
+      "question": "does joe die in the purge election year",
+      "queries_tried": [
+        "does joe die in the purge election year",
+        "The Purge: Election Year Joe Dixon fate ending",
+        "The Purge: Election Year Joe Dixon death scene"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Yes, according to the documents, Joe dies in *The Purge: Election Year*. \n\nAs described in Document 2, Joe shoots Harmon James but is fatally wounded in the process. Before dying, he asks Marcos to take care of his store.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. Document 2 describes the plot of 'The Purge: Election Year' (alluding to the character Roan who is the Senator/Presidential candidate in that film) and explicitly states that Joe is fatally wounded and dies after asking Marcos to take care of his store.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test30",
+      "question": "what is the meaning of the name comanche",
+      "queries_tried": [
+        "what is the meaning of the name comanche"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": " Based on the provided documents, the name \"Comanche\" comes from the Ute name for them, **k\u0268mantsi**, which means **\"enemy\"**.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and directly addresses the question using only the provided information from Document 1. It is clear, concise, and faithful to the source text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test31",
+      "question": "who do you meet at the gates of heaven",
+      "queries_tried": [
+        "who do you meet at the gates of heaven"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents provided, you meet **Saint Peter** at the gates of heaven. \n\nAccording to Document 1, Saint Peter is the keeper of the \"keys to the kingdom\" who guards the gates. In some versions of this imagery, he looks up the deceased's name in a book before opening the gate.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct according to Document 1. It identifies Saint Peter as the figure met at the gates, explains his role as guard and keeper of the keys, and mentions his process of checking names in a book. It adheres strictly to the provided documents and is clearly written.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test32",
+      "question": "what are bulls used for on a farm",
+      "queries_tried": [
+        "what are bulls used for on a farm"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, bulls are used on farms for the following purposes:\n\n**Breeding and Herd Maintenance**\n- Bulls are traditionally kept with cows for natural mating and herd reproduction\n- They maintain bloodlines and ensure genetic diversity in the herd\n\n**Artificial Insemination (AI) and Semen Sales**\n- Many ranchers keep bulls specifically to collect semen, which is stored in liquid nitrogen and sold for profit\n- AI allows farmers to breed cows to high-quality bulls without purchasing them outright, and to introduce superior genetics or outcross bloodlines into their herds\n\n**Meat Production**\n- Bulls are raised for beef (referred to as \"bull beef\"), typically ready for slaughter one to two months sooner than castrated males or females, producing more lean muscle\n\n**Draft/Haulage Work**\n- While most male cattle are slaughtered young, some are castrated and used as work oxen for haulage purposes",
+      "score": 100,
+      "scoring_reasoning": "The answer is excellent. It accurately identifies all the primary uses of bulls/male cattle mentioned in the documents: natural breeding, semen collection for AI, meat production, and draft work. It correctly notes that draft work (oxen) involves castrated males, as specified in Document 2. The formatting is clear and the information is faithful only to the provided text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test33",
+      "question": "is spain the second largest country in europe",
+      "queries_tried": [
+        "is spain the second largest country in europe"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, **no, Spain is not the second largest country in Europe** (referring to the European continent).\n\nAccording to Document 1, Spain is the **fourth largest country in the European continent**, behind Russia, Ukraine, and France. However, the document does specify that Spain is the **second largest country in Western Europe** (behind France).",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly accurate based on the provided documents. It correctly identifies Spain's ranking on the European continent (fourth) versus its ranking in Western Europe (second), directly using the information from Document 1. It is clear, concise, and faithful to the text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test34",
+      "question": "difference between single layer perceptron and multilayer perceptron",
+      "queries_tried": [
+        "difference between single layer perceptron and multilayer perceptron",
+        "comparison of single layer vs multilayer perceptron architecture and capabilities",
+        "architectural and functional differences between single layer perceptron vs multilayer perceptron"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Based on the provided documents, here are the key differences between a single perceptron (true perceptron) and a multilayer perceptron (MLP):\n\n**Structure and Organization**\n- A single perceptron is an individual artificial neuron. \n- A multilayer perceptron does **not** refer to a single perceptron with multiple layers, but rather contains **many perceptrons organized into layers** (also called a \"multilayer perceptron network\").\n\n**Activation Functions**\n- True perceptrons are formally a special case of artificial neurons that use a **threshold activation function** such as the Heaviside step function.\n- MLP neurons can employ **arbitrary activation functions**, not limited to threshold functions.\n\n**Functionality**\n- A true perceptron performs **binary classification** only (either this or that).\n- An MLP neuron is free to perform either **classification or regression**, depending upon its activation function.",
+      "score": 100,
+      "scoring_reasoning": "The answer is entirely based on Document 1, which provides a detailed comparison between 'true perceptrons' (single perceptrons) and 'MLP perceptrons'. The response accurately captures the structural differences, the types of activation functions used, and the functional capabilities (classification vs. regression) as described in the text. It is clear, well-organized, and does not include outside information.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test35",
+      "question": "what is the meaning of the dragon boat festival",
+      "queries_tried": [
+        "what is the meaning of the dragon boat festival"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, the Dragon Boat Festival (also known as the Duanwu Festival) is a traditional Chinese holiday with the following meanings and characteristics:\n\n1. **Commemoration of fealty and filial piety**: It is also known as the Zhongxiao Festival (\u5fe0\u5b5d\u7bc0), which specifically commemorates fealty and filial piety.\n\n2. **Timing**: The festival occurs near the summer solstice on the 5th day of the 5th month of the traditional Chinese calendar, giving it the alternative name the \"Double Fifth Festival.\"\n\n3. **Calendar variation**: Because the Chinese calendar is lunisolar, the specific date varies each year on the Gregorian calendar.",
+      "score": 0,
+      "scoring_reasoning": "Error parsing score response",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test36",
+      "question": "who is edmund on days of our lives",
+      "queries_tried": [
+        "who is edmund on days of our lives"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "The answer cannot be found in the provided documents. None of the documents mention a character named Edmund on *Days of Our Lives*.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct. I have reviewed the provided documents and can confirm that none of them mention a character named Edmund. The documents discuss characters such as Kristen DiMera, Bill and Susan Seaforth Hayes, Lucas, Sami, EJ DiMera, Sydney DiMera, and Theo Carver, but 'Edmund' is never mentioned.",
+      "recall_at_k": 0.0,
+      "gold_docs_found": 0,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test37",
+      "question": "i want to be with you everywhere song",
+      "queries_tried": [
+        "i want to be with you everywhere song"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents provided, the song you're referring to is **\"Everywhere\" by Fleetwood Mac**.\n\nKey details from the documents:\n- It's from their 1987 album *Tango in the Night*\n- Written by Christine McVie, who also performs lead vocals\n- Released as a single in the US on November 28, 1987, and in the UK on March 21, 1988\n- Reached number 14 on the US Billboard Hot 100 and number one on the Adult Contemporary chart (where it stayed for three weeks)\n- Reached number four in the UK charts\n\nWhile the documents don't explicitly quote the lyrics \"I want to be with you everywhere,\" the song title and your description match this Fleetwood Mac track.",
+      "score": 100,
+      "scoring_reasoning": "The answer is accurate and directly uses the information from Document 1 to address the user's query. It correctly identifies the song 'Everywhere' by Fleetwood Mac, provides relevant metadata (author, album, release dates, and chart performance), and acknowledges the connection between the song title and the user's phrased lyrics while staying faithful to the text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test38",
+      "question": "what degree is a crock pot on low",
+      "queries_tried": [
+        "what degree is a crock pot on low",
+        "average temperature of slow cooker low setting in Fahrenheit or Celsius",
+        "typical temperature of slow cooker low setting in Fahrenheit or Celsius"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "The answer cannot be found in the provided documents. \n\nWhile Document 1 mentions that some slow cookers automatically switch to a \"warming\" setting that maintains a temperature of **71\u201374 \u00b0C (160\u2013165 \u00b0F)**, it does not specify the temperature for the \"low\" cooking setting.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct and faithful to the provided documents. Document 1 provides the temperature for a 'warming' setting (71\u201374 \u00b0C), but none of the documents specify the temperature for a 'low' setting. The response accurately identifies this distinction.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test39",
+      "question": "royal society for the protection of birds number of members",
+      "queries_tried": [
+        "royal society for the protection of birds number of members"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents provided, the Royal Society for the Protection of Birds (RSPB) has **more than a million members** (including 195,000 youth members).",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate according to Document 1. It provides the specific number of members mentioned (over a million) and includes the relevant detail regarding youth members. It does not use external information and is clearly written.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test40",
+      "question": "when was theme from a summer place released",
+      "queries_tried": [
+        "when was theme from a summer place released"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, \"Theme from a Summer Place\" was released in **September 1959** as a single on Columbia Records, credited to \"Percy Faith and his Orchestra.\" This was prior to the November 1959 release of the film *A Summer Place*.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate according to the provided documents. It correctly identifies the release month and year (September 1959) and provides additional context regarding the artist and the film release date as mentioned in Document 1.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test41",
+      "question": "when does jenny humphrey come back to gossip girl",
+      "queries_tried": [
+        "when does jenny humphrey come back to gossip girl"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, Jenny Humphrey returns to Gossip Girl in **the final episode of the series**, appearing in the five-year time jump for her brother Dan Humphrey's wedding to Serena van der Woodsen.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to Document 1. It correctly identifies that Jenny returns in the final episode of the series during the five-year time jump.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test42",
+      "question": "when did athens emerges as wealthiest greek city state",
+      "queries_tried": [
+        "when did athens emerges as wealthiest greek city state"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, Athens emerged as the dominant economic power (wealthiest Greek city state) **around the late 6th century BCE**. This was further bolstered by the discovery of silver veins in the neighboring mountains.",
+      "score": 100,
+      "scoring_reasoning": "The answer is perfectly correct and faithful to the provided documents. Document 1 explicitly states that Athens emerged as the dominant economic power around the late 6th century BCE and mentions the silver veins as a contributing factor. The answer is clear and directly addresses the question.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test43",
+      "question": "why does king from tekken wear a mask",
+      "queries_tried": [
+        "why does king from tekken wear a mask",
+        "origin of King's jaguar mask Tekken lore",
+        "Tekken King jaguar mask origin lore"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": " Based on the provided document, King wears a **jaguar mask** as part of his fighting identity. While the document does not explicitly state the initial reason he adopted the mask, it describes the following details about it:\n\n*   King temporarily **gave up the jaguar mask** and returned to street fighting after becoming depressed when a child died in his care.\n*   His rival **Armor King** convinced him to wear the jaguar mask again and enter The King of Iron Fist Tournament 2.\n*   After recovering from alcoholism and competing in the tournament, King continued participating in pro-wrestling and martial arts tournaments, presumably wearing the mask as part of his wrestling persona.",
+      "score": 85,
+      "scoring_reasoning": "The answer is faithful to the provided text and accurately identifies that the document does not explicitly state the first reason King put on the mask. It correctly details the circumstances under which he gave it up and why he put it back on (at the urging of Armor King). It loses a few points for completeness because it doesn't mention that King taught his fighting skills to children, which contextualizes his role as a luchador/masked figure, though this is a minor omission for the specific question asked.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test44",
+      "question": "who sings war don't let me down",
+      "queries_tried": [
+        "who sings war don't let me down",
+        "War band discography Don't Let Me Down",
+        "song War Don't Let Me Down artist discography"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Based on the provided documents, there is no mention of a song titled \"war don't let me down.\" \n\nHowever, Document 1 mentions **\"Don't Let Me Down\"** by the American production duo **The Chainsmokers**, which features vocals by American singer **Daya**.\n\nIf you are referring to \"Don't Let Me Down,\" the vocalist is **Daya** (with the song being by The Chainsmokers).",
+      "score": 100,
+      "scoring_reasoning": "The answer correctly identifies that the documents do not contain the specific phrase 'war don't let me down' but accurately provides the details for the closely matching song 'Don't Let Me Down' mentioned in Document 1. It correctly attributes the vocals to Daya and the production to The Chainsmokers, staying faithful to the provided text.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test45",
+      "question": "who invented the frisbee and how did it get its name",
+      "queries_tried": [
+        "who invented the frisbee and how did it get its name",
+        "Walter Frederick Morrison Frisbee name origin Frispie Pie Company",
+        "history of the frisbee name origin and inventor Fred Morrison Frisbie Pie Company"
+      ],
+      "retrieval_attempts": 3,
+      "generated_answer": "Based on the documents provided:\n\n**Inventor:** Fred Morrison invented the flying disc. He first sketched the design (called the Whirlo-Way) in 1946, later developed the Flyin-Saucer with investor Warren Franscioni in 1948, and eventually designed the Pluto Platter in 1955 with Lu, which became the archetype of all modern flying discs.\n\n**Origin of the name:** The name \"Frisbee\" came from college students in the Northeast who were calling the Pluto Platter by that name. Wham-O toy company, which had purchased the rights to the Pluto Platter in January 1957, learned of this nickname and began using the name \"Frisbee\" in addition to \"Pluto Platter\" by June 1957.",
+      "score": 100,
+      "scoring_reasoning": "The answer is excellent. It correctly identifies the inventor (Fred Morrison) and explains the evolution of the various designs mentioned in Document 1. It also accurately explains how the 'Frisbee' name originated from college students and was adopted by Wham-O, as stated in the text. The answer is clear, faithful to the source material, and complete.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test46",
+      "question": "who plays v on orange is the new black",
+      "queries_tried": [
+        "who plays v on orange is the new black"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, **Toussaint** plays V (Yvonne \"Vee\" Parker) on *Orange Is the New Black*. \n\nAccording to Document 2, Toussaint played the role of Yvonne \"Vee\" Parker, the main antagonist in the second season of the series, for which she received critical acclaim and a Critics' Choice Television Award.",
+      "score": 100,
+      "scoring_reasoning": "The answer is correct, complete, and faithful to the provided documents. It correctly identifies the actress (Toussaint) and providing the full character name (Yvonne 'Vee' Parker) and context as found in Document 2.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test47",
+      "question": "how long prime minister stay in office canada",
+      "queries_tried": [
+        "how long prime minister stay in office canada"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, the Canadian Prime Minister does not have a fixed term. According to Document 1, the Prime Minister serves at Her Majesty's pleasure and remains in office until he or she **resigns, is dismissed, or dies**. \n\nWhile the lifespan of Parliament is limited (to four years for majority governments as of 2007), this applies to the parliamentary term rather than the Prime Minister's tenure specifically.",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate according to the provided documents. it correctly identifies that there is no fixed term for the Prime Minister and lists the conditions for leaving office (resignation, dismissal, or death) as stated in Document 1. It also accurately distinguishes between the parliamentary term and the Prime Minister's tenure.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    },
+    {
+      "query_id": "test48",
+      "question": "where was the movie jeremiah johnson filmed at",
+      "queries_tried": [
+        "where was the movie jeremiah johnson filmed at"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the provided documents, the movie *Jeremiah Johnson* was filmed in **Utah**.\n\nSpecifically, it was shot in nearly 100 locations across the state, including:\n- Mount Timpanogos\n- Ashley National Forest\n- Leeds\n- Snow Canyon State Park\n- St. George\n- Sundance Resort\n- Uinta National Forest\n- Wasatch-Cache National Forest\n- Zion National Park",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate, faithful to the documents, and clear. It correctly identifies Utah as the filming location and lists the specific sites mentioned in Document 3. Although the documents do not explicitly name the film 'Jeremiah Johnson', the context of Robert Redford, the year 1972, and the locations align with Document 2 and 3, which the answer correctly synthesizes.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 2,
+      "gold_docs_total": 2
+    },
+    {
+      "query_id": "test49",
+      "question": "when do willow and tara get back together",
+      "queries_tried": [
+        "when do willow and tara get back together"
+      ],
+      "retrieval_attempts": 1,
+      "generated_answer": "Based on the documents, Willow and Tara reconcile in the episode **\"Seeing Red\"** (after tentatively courting each other in the previous episode, \"Entropy\").",
+      "score": 100,
+      "scoring_reasoning": "The answer is completely accurate and faithful to the provided documents. Document 1 explicitly states that after courting in 'Entropy', they reconcile through the next episode, 'Seeing Red'. The answer is clear and directly addresses the question.",
+      "recall_at_k": 1.0,
+      "gold_docs_found": 1,
+      "gold_docs_total": 1
+    }
+  ]
+}

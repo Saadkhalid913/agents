@@ -10,7 +10,7 @@ Before you build anything complicated, you should verify the plumbing works. Thi
 
 That's it. Twenty-eight lines. The interesting stuff starts next.
 
-## Measuring Quality (`1.1_in_context_qa.py`)
+## Measuring Quality (`1_rag/1.1_in_context_qa.py`)
 
 Here's the first real question: how do you know if your model is any good?
 
@@ -47,6 +47,6 @@ The key detail: we give the model *all* the documents. No retrieval, no searchin
 Run it:
 
 ```bash
-python 1.1_in_context_qa.py
-python 1.1_in_context_qa.py --eval-model openai/gpt-4o --num-examples 50
+python 1_rag/1.1_in_context_qa.py
+python 1_rag/1.1_in_context_qa.py --eval-model openai/gpt-4o --num-examples 50
 ```
