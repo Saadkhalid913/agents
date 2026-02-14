@@ -11,7 +11,7 @@ classoption:
 # Fonts
 mainfont: "Charter"
 sansfont: "Helvetica"
-monofont: "DejaVu Sans Mono"
+monofont: "Menlo"
 monofontoptions: Scale=0.85
 
 # Page geometry
